@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PPPianobarController.h"
 
 @interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	
+	PPPianobarController *pianobar;
 }
 
 @property (assign) IBOutlet NSWindow *window;
