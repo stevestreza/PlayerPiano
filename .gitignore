@@ -5,3 +5,18 @@ config.*
 *.deps*
 *.libs*
 Makefile
+
+# libfaad2
+faad
+libfaad.la
+libtool
+stamp-h1
+faad2.spec
+libfaad.la
+
+# libao
+ao.pc
+os_types.h
+libtool
+libao.la
+libmacosx.la
