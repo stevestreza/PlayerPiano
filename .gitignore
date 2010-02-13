@@ -1,1 +1,7 @@
-*.o *.lo *.deps/ *Makefile
+config.*
+*.o
+*.a
+*.lo
+*.deps*
+*.libs*
+Makefile
