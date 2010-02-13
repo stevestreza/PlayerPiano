@@ -11,7 +11,9 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 1E3D17B3112708C5007DDFF7 /* Build configuration list for PBXAggregateTarget "pianobar" */;
 			buildPhases = (
-				1E3D17AF11270897007DDFF7 /* ShellScript */,
+				1E3D17AF11270897007DDFF7 /* Build libao */,
+				1EF71E8E11270B95006174F2 /* Build libfaad2 */,
+				1EF71E9011270BA3006174F2 /* Build pianobar */,
 			);
 			dependencies = (
 			);
@@ -182,13 +184,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E3D17AF11270897007DDFF7 /* ShellScript */ = {
+		1E3D17AF11270897007DDFF7 /* Build libao */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Build libao";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd $DEPENDENCY_LIBAO_PATH;\n\nmake;\n\npopd;";
+		};
+		1EF71E8E11270B95006174F2 /* Build libfaad2 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build libfaad2";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd $DEPENDENCY_LIBAO_PATH;\n\nmake;\n\npopd;";
+		};
+		1EF71E9011270BA3006174F2 /* Build pianobar */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build pianobar";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +263,10 @@
 		1E3D17B111270897007DDFF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CFLAGS = "-H $(DEPENDENCY_LIBAO_PATH) -H $(DEPENDENCY_LIBFAAD2_PATH)";
 				COPY_PHASE_STRIP = NO;
+				DEPENDENCY_LIBAO_PATH = "$(PIANOBAR_PATH)/../libao/";
+				DEPENDENCY_LIBFAAD2_PATH = "$(PIANOBAR_PATH)/../libfaad2/";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PIANOBAR_PATH = "$(SRCROOT)/contrib/pianobar";
@@ -243,8 +277,11 @@
 		1E3D17B211270897007DDFF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CFLAGS = "-H $(DEPENDENCY_LIBAO_PATH) -H $(DEPENDENCY_LIBFAAD2_PATH)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPENDENCY_LIBAO_PATH = "$(PIANOBAR_PATH)/../libao/";
+				DEPENDENCY_LIBFAAD2_PATH = "$(PIANOBAR_PATH)/../libfaad2/";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PIANOBAR_PATH = "$(SRCROOT)/contrib/pianobar";
 				PRODUCT_NAME = pianobar;
