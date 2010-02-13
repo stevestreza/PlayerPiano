@@ -6,6 +6,20 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		1E3D17B011270897007DDFF7 /* pianobar */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1E3D17B3112708C5007DDFF7 /* Build configuration list for PBXAggregateTarget "pianobar" */;
+			buildPhases = (
+				1E3D17AF11270897007DDFF7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = pianobar;
+			productName = pianobar;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */; };
@@ -118,22 +132,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		1E3D1790112704AF007DDFF7 /* pianobar */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 1E3D1795112704B5007DDFF7 /* Build configuration list for PBXLegacyTarget "pianobar" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			dependencies = (
-			);
-			name = pianobar;
-			passBuildSettingsInEnvironment = 1;
-			productName = pianobar;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		8D1107260486CEB800E47090 /* PlayerPiano */ = {
 			isa = PBXNativeTarget;
@@ -165,7 +163,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E3D1790112704AF007DDFF7 /* pianobar */,
+				1E3D17B011270897007DDFF7 /* pianobar */,
 				8D1107260486CEB800E47090 /* PlayerPiano */,
 			);
 		};
@@ -182,6 +180,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E3D17AF11270897007DDFF7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd $PIANOBAR_PATH;\n\ncmake .;\nmake;\n\npopd;";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -215,22 +229,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1E3D1791112704AF007DDFF7 /* Debug */ = {
+		1E3D17B111270897007DDFF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				PIANOBAR_PATH = "$(SRCROOT)/contrib/pianobar";
 				PRODUCT_NAME = pianobar;
 			};
 			name = Debug;
 		};
-		1E3D1792112704AF007DDFF7 /* Release */ = {
+		1E3D17B211270897007DDFF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PIANOBAR_PATH = "$(SRCROOT)/contrib/pianobar";
 				PRODUCT_NAME = pianobar;
 				ZERO_LINK = NO;
 			};
@@ -296,11 +312,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E3D1795112704B5007DDFF7 /* Build configuration list for PBXLegacyTarget "pianobar" */ = {
+		1E3D17B3112708C5007DDFF7 /* Build configuration list for PBXAggregateTarget "pianobar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1E3D1791112704AF007DDFF7 /* Debug */,
-				1E3D1792112704AF007DDFF7 /* Release */,
+				1E3D17B111270897007DDFF7 /* Debug */,
+				1E3D17B211270897007DDFF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
