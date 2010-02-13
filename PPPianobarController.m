@@ -35,7 +35,8 @@
 	NSPipe *pipe = [NSPipe pipe];
 	[pianobarTask setStandardOutput:pipe];
 	pianobarReadHandle = [[pipe fileHandleForReading] retain];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataAvailable:) name:NSFileHandleDataAvailableNotification object:pianobarReadHandle];
+	
+	pianobarReadLineBuffer = [[PPFileHandleLineBuffer alloc] initWithFileHandle:pianobarReadHandle];
 	
 	pipe = [NSPipe pipe];
 	[pianobarTask setStandardInput:pipe];
@@ -44,15 +45,6 @@
 
 -(void)start{
 	[pianobarTask launch];
-	[pianobarReadHandle waitForDataInBackgroundAndNotify];
-}
-
--(void)dataAvailable:(NSNotification *)notif{
-	NSData *data = [pianobarReadHandle availableData];
-	NSString *dataString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-	NSLog(@"Data available! \n%@\n%@", dataString, data);
-	
-	[pianobarReadHandle waitForDataInBackgroundAndNotify];
 }
 
 @end
