@@ -11,6 +11,8 @@
 		1EF23B8D112746F200D04DD7 /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23B5F112745F100D04DD7 /* pianobar */; };
 		1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BA2112747A800D04DD7 /* PPPianobarController.m */; };
 		1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */; };
+		1EF23C2E11275A5B00D04DD7 /* PPLineRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C2D11275A5B00D04DD7 /* PPLineRecognizer.m */; };
+		1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C3A11275C6100D04DD7 /* PPLineParser.m */; };
 		256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -72,6 +74,10 @@
 		1EF23BA2112747A800D04DD7 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
 		1EF23BC811274AFA00D04DD7 /* PPFileHandleLineBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFileHandleLineBuffer.h; sourceTree = "<group>"; };
 		1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFileHandleLineBuffer.m; sourceTree = "<group>"; };
+		1EF23C2C11275A5B00D04DD7 /* PPLineRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLineRecognizer.h; sourceTree = "<group>"; };
+		1EF23C2D11275A5B00D04DD7 /* PPLineRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLineRecognizer.m; sourceTree = "<group>"; };
+		1EF23C3911275C6100D04DD7 /* PPLineParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLineParser.h; sourceTree = "<group>"; };
+		1EF23C3A11275C6100D04DD7 /* PPLineParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLineParser.m; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* PlayerPianoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPianoAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerPianoAppDelegate.m; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* PlayerPiano_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPiano_Prefix.pch; sourceTree = "<group>"; };
@@ -97,12 +103,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1EF23C2F11275BBE00D04DD7 /* Line Reading */,
 				256AC3D80F4B6AC300CF3369 /* PlayerPianoAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */,
 				1EF23BA1112747A800D04DD7 /* PPPianobarController.h */,
 				1EF23BA2112747A800D04DD7 /* PPPianobarController.m */,
-				1EF23BC811274AFA00D04DD7 /* PPFileHandleLineBuffer.h */,
-				1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -143,6 +148,19 @@
 				1EF23B5F112745F100D04DD7 /* pianobar */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1EF23C2F11275BBE00D04DD7 /* Line Reading */ = {
+			isa = PBXGroup;
+			children = (
+				1EF23BC811274AFA00D04DD7 /* PPFileHandleLineBuffer.h */,
+				1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */,
+				1EF23C2C11275A5B00D04DD7 /* PPLineRecognizer.h */,
+				1EF23C2D11275A5B00D04DD7 /* PPLineRecognizer.m */,
+				1EF23C3911275C6100D04DD7 /* PPLineParser.h */,
+				1EF23C3A11275C6100D04DD7 /* PPLineParser.m */,
+			);
+			name = "Line Reading";
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* PlayerPiano */ = {
@@ -291,6 +309,8 @@
 				256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */,
 				1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */,
 				1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */,
+				1EF23C2E11275A5B00D04DD7 /* PPLineRecognizer.m in Sources */,
+				1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,16 @@
 
 @interface PPFileHandleLineBuffer : NSObject {
 	NSFileHandle *fileHandle;
-	
 	NSMutableData *buffer;
+	
+	id target;
+	SEL action;
 }
+
+@property (nonatomic, assign) id target;
+@property (nonatomic, assign) SEL action;
+
+-(NSString *)bufferContents;
+-(BOOL)bufferHasUnprocessedLines;
 
 @end

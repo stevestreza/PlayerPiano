@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PPFileHandleLineBuffer.h"
+#import "PPLineParser.h"
 
 @class PPPianobarController;
 
@@ -21,11 +22,18 @@
 
 @end
 
-
 @interface PPPianobarController : NSObject {
 	NSTask *pianobarTask;
 	
+	NSString *username;
+	NSString *password;
+	
 	PPFileHandleLineBuffer *pianobarReadLineBuffer;
+	PPLineParser *pianobarParser;
+	PPLineParser *stationParser;
+	
+	NSArray *stations;
+	
 	NSFileHandle *pianobarReadHandle;
 	NSFileHandle *pianobarWriteHandle;
 	
