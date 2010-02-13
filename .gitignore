@@ -5,6 +5,7 @@ config.*
 *.deps*
 *.libs*
 Makefile
+.DS_Store
 
 # libfaad2
 faad

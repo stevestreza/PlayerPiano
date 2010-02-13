@@ -13,6 +13,7 @@
 			buildPhases = (
 				1E3D17AF11270897007DDFF7 /* Build libao */,
 				1EF71E8E11270B95006174F2 /* Build libfaad2 */,
+				1EF71EB01127159C006174F2 /* Build libmad */,
 				1EF71E9011270BA3006174F2 /* Build pianobar */,
 			);
 			dependencies = (
@@ -226,6 +227,20 @@
 			shellPath = /bin/sh;
 			shellScript = "pushd $PIANOBAR_PATH;\n\ncmake .;\nmake;\n\npopd;";
 		};
+		1EF71EB01127159C006174F2 /* Build libmad */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build libmad";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd $DEPENDENCY_LIBMAD_PATH;\n\nmake;\n\npopd;";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -267,6 +282,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEPENDENCY_LIBAO_PATH = "$(PIANOBAR_PATH)/../libao/";
 				DEPENDENCY_LIBFAAD2_PATH = "$(PIANOBAR_PATH)/../libfaad2/";
+				DEPENDENCY_LIBMAD_PATH = "$(PIANOBAR_PATH)/../libmad/";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PIANOBAR_PATH = "$(SRCROOT)/contrib/pianobar";
@@ -282,6 +298,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPENDENCY_LIBAO_PATH = "$(PIANOBAR_PATH)/../libao/";
 				DEPENDENCY_LIBFAAD2_PATH = "$(PIANOBAR_PATH)/../libfaad2/";
+				DEPENDENCY_LIBMAD_PATH = "$(PIANOBAR_PATH)/../libmad/";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PIANOBAR_PATH = "$(SRCROOT)/contrib/pianobar";
 				PRODUCT_NAME = pianobar;
