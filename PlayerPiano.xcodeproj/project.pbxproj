@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		1E1B690B11279E7C00F03465 /* NSString+TimeParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */; };
+		1E774CCE1128834E00DC4EC7 /* next-song.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCA1128834E00DC4EC7 /* next-song.png */; };
+		1E774CCF1128834E00DC4EC7 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCB1128834E00DC4EC7 /* pause.png */; };
+		1E774CD01128834E00DC4EC7 /* thumb-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCC1128834E00DC4EC7 /* thumb-down.png */; };
+		1E774CD11128834E00DC4EC7 /* thumb-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCD1128834E00DC4EC7 /* thumb-up.png */; };
+		1E774CE1112883B700DC4EC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CDD112883B700DC4EC7 /* InfoPlist.strings */; };
+		1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CDF112883B700DC4EC7 /* MainMenu.xib */; };
 		1EF23B8D112746F200D04DD7 /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23B5F112745F100D04DD7 /* pianobar */; };
 		1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BA2112747A800D04DD7 /* PPPianobarController.m */; };
 		1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */; };
 		1EF23C2E11275A5B00D04DD7 /* PPLineRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C2D11275A5B00D04DD7 /* PPLineRecognizer.m */; };
 		1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C3A11275C6100D04DD7 /* PPLineParser.m */; };
 		256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */; };
-		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -66,12 +70,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1E1B690911279E7C00F03465 /* NSString+TimeParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeParsing.h"; sourceTree = "<group>"; };
 		1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeParsing.m"; sourceTree = "<group>"; };
+		1E774CCA1128834E00DC4EC7 /* next-song.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next-song.png"; sourceTree = "<group>"; };
+		1E774CCB1128834E00DC4EC7 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		1E774CCC1128834E00DC4EC7 /* thumb-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-down.png"; sourceTree = "<group>"; };
+		1E774CCD1128834E00DC4EC7 /* thumb-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-up.png"; sourceTree = "<group>"; };
+		1E774CDE112883B700DC4EC7 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1E774CE0112883B700DC4EC7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pianobar.xcodeproj; path = contrib/pianobar/build/pianobar.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1EF23BA1112747A800D04DD7 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPianobarController.h; sourceTree = "<group>"; };
 		1EF23BA2112747A800D04DD7 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
@@ -194,10 +202,14 @@
 			isa = PBXGroup;
 			children = (
 				8D1107310486CEB800E47090 /* PlayerPiano-Info.plist */,
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				1E774CDD112883B700DC4EC7 /* InfoPlist.strings */,
+				1E774CDF112883B700DC4EC7 /* MainMenu.xib */,
+				1E774CCA1128834E00DC4EC7 /* next-song.png */,
+				1E774CCB1128834E00DC4EC7 /* pause.png */,
+				1E774CCC1128834E00DC4EC7 /* thumb-down.png */,
+				1E774CCD1128834E00DC4EC7 /* thumb-up.png */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -298,8 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EF23B8D112746F200D04DD7 /* pianobar in Resources */,
-				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				1E774CCE1128834E00DC4EC7 /* next-song.png in Resources */,
+				1E774CCF1128834E00DC4EC7 /* pause.png in Resources */,
+				1E774CD01128834E00DC4EC7 /* thumb-down.png in Resources */,
+				1E774CD11128834E00DC4EC7 /* thumb-up.png in Resources */,
+				1E774CE1112883B700DC4EC7 /* InfoPlist.strings in Resources */,
+				1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,18 +347,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+		1E774CDD112883B700DC4EC7 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
+				1E774CDE112883B700DC4EC7 /* English */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+		1E774CDF112883B700DC4EC7 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1DDD58150DA1D0A300B32029 /* English */,
+				1E774CE0112883B700DC4EC7 /* English */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -361,7 +377,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PlayerPiano_Prefix.pch;
-				INFOPLIST_FILE = "PlayerPiano-Info.plist";
+				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = PlayerPiano;
 			};
@@ -375,7 +391,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PlayerPiano_Prefix.pch;
-				INFOPLIST_FILE = "PlayerPiano-Info.plist";
+				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = PlayerPiano;
 			};

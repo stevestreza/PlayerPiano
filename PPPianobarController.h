@@ -29,7 +29,6 @@
 	NSString *password;
 	
 	PPFileHandleLineBuffer *pianobarReadLineBuffer;
-	PPFileHandleLineBuffer *pianobarReadErrorBuffer;
 
 	PPLineParser *pianobarParser;
 	PPLineParser *stationParser;
@@ -44,7 +43,6 @@
 	
 	NSFileHandle *pianobarReadHandle;
 	NSFileHandle *pianobarWriteHandle;
-	NSFileHandle *pianobarErrorHandle;
 	
 	id<PPPianobarDelegate> delegate;
 }
@@ -57,7 +55,9 @@
 
 -(void)playStationWithID:(NSString *)stationID;
 
+-(BOOL)isInPlaybackMode;
 -(BOOL)isPlaying;
+-(BOOL)isPaused;
 
 -(IBAction)thumbsUpCurrentSong:(id)sender;
 -(IBAction)thumbsDownCurrentSong:(id)sender;

@@ -13,6 +13,14 @@
 
 @synthesize delegate, stations, selectedStation, nowPlaying;
 
++ (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key{
+	if([key isEqualToString:@"target"]){
+		return [NSSet setWithObjects:
+				@"isInPlaybackMode", @"isPlaying", @"isPaused",
+				nil];
+	}
+}
+
 -(id)initWithUsername:(NSString *)aUsername password:(NSString *)aPassword{
 	if(self = [super init]){
 		username = [aUsername copy];
@@ -55,7 +63,7 @@
 		
 		// if this is the last line, and there is an input waiting
 		if(![pianobarReadLineBuffer bufferHasUnprocessedLines] && [[pianobarReadLineBuffer bufferContents] rangeOfString:@"[?]"].location != NSNotFound){
-			NSLog(@"Done with stations, yo %@", stations);
+//			NSLog(@"Done with stations, yo %@", stations);
 			pianobarReadLineBuffer.target = pianobarParser;
 			
 //			[self writeStringToPianobar:@"2\n"];
@@ -96,7 +104,7 @@
 	[playbackParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"|>  Station "].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
-		NSLog(@"Got station name from %@",[[line componentsSeparatedByString:@"\""] objectAtIndex:1]);
+//		NSLog(@"Got station name from %@",[[line componentsSeparatedByString:@"\""] objectAtIndex:1]);
 	} copy] autorelease]]];
 	
 	// detect playback song
@@ -114,7 +122,7 @@
 						   songAlbum, @"songAlbum",
 						   nil];
 		
-		NSLog(@"Now playing! %@",self.nowPlaying);
+//		NSLog(@"Now playing! %@",self.nowPlaying);
 	} copy] autorelease]]];
 	
 	// detect stations
@@ -157,6 +165,10 @@
 	return ([pianobarReadLineBuffer target] == playbackParser);
 }
 
+-(BOOL)isPlaying{
+	return [self isInPlaybackMode] && !paused;
+}
+
 -(BOOL)isPaused{
 	return [self isInPlaybackMode] && paused;
 }
@@ -195,15 +207,6 @@
 	[pianobarTask setLaunchPath:[[NSBundle mainBundle] pathForResource:@"pianobar" ofType:nil]];
 	
 	[self setupParsers];
-	NSString *configPath = [self setupConfigFile];
-
-	NSMutableDictionary *environment = [[[pianobarTask environment] mutableCopy] autorelease];
-	if(!environment){
-		environment = [NSMutableDictionary dictionary];
-	}
-	[environment setObject:[configPath stringByDeletingLastPathComponent] forKey:@"XDG_CONFIG_HOME"];
-	NSLog(@"Environment: %@",environment);
-	[pianobarTask setEnvironment:environment];
 	
 	NSPipe *pipe = [[NSPipe pipe] retain];
 	[pianobarTask setStandardOutput:pipe];
@@ -213,14 +216,6 @@
 	pianobarReadLineBuffer.target = pianobarParser;
 	pianobarReadLineBuffer.action = @selector(parseLine:);
 	
-/*	pipe = [[NSPipe pipe] retain];
-	[pianobarTask setStandardError:pipe];
-	pianobarErrorHandle = [[pipe fileHandleForReading] retain];
-	
-	pianobarReadErrorBuffer = [[PPFileHandleLineBuffer alloc] initWithFileHandle:pianobarErrorHandle];
-	pianobarReadErrorBuffer.target = pianobarParser;
-	pianobarReadErrorBuffer.action = @selector(parseLine:);
-*/	
 	pipe = [[NSPipe pipe] retain];
 	[pianobarTask setStandardInput:pipe];
 	pianobarWriteHandle = [[pipe fileHandleForWriting] retain];
