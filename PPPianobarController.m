@@ -246,7 +246,18 @@
 }
 
 -(void)start{
+	if(!pianobarTask){
+		[self setupTask];
+	}
 	[pianobarTask launch];
+}
+
+-(void)stop{
+	[pianobarTask terminate];
+	[pianobarTask waitUntilExit];
+	
+	[pianobarTask release];
+	pianobarTask = nil;
 }
 
 -(NSAttributedString *)nowPlayingAttributedDescription{

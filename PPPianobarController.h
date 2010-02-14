@@ -66,4 +66,9 @@
 
 -(NSAttributedString *)nowPlayingAttributedDescription;
 
+-(void)start;
+-(void)stop;
+
+-(id)initWithUsername:(NSString *)aUsername password:(NSString *)aPassword;
+
 @end

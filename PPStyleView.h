@@ -19,5 +19,5 @@
 
 // can be nil, will use the global stylesheet if so
 @property (nonatomic, retain) VSStyleSheet *styleSheet;
-
+-(void)setNeedsDisplay;
 @end

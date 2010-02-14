@@ -19,6 +19,7 @@
 
 	IBOutlet NSView *backgroundContainer;
 	PPStyleView *backgroundView;
+	PPStyleView *progressBar;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -30,5 +31,5 @@
 
 -(IBAction)handleThumbSegmentedControl:(id)sender;
 -(IBAction)handlePlaybackSegmentedControl:(id)sender;
-
+-(IBAction)quit:(id)sender;
 @end

@@ -20,12 +20,12 @@
 
 @synthesize styleName, styleSheet;
 
-//-(void)initWithCoder:(NSCoder *)aDecoder{
-//	if(self = [super initWithCoder:aDecoder]){
-//		[self _awake];
-//	}
-//	return self;
-//}
+-(void)initWithCoder:(NSCoder *)aDecoder{
+	if(self = [super initWithCoder:aDecoder]){
+		[self _awake];
+	}
+	return self;
+}
 
 -(id)initWithFrame:(NSRect)frameRect{
 	if(self = [super initWithFrame:frameRect]){
@@ -64,14 +64,35 @@
 	[self setNeedsDisplay];
 }
 
+-(void)viewWillMoveToWindow:(NSWindow *)window{
+	NSLog(@"Weeeeee %@", window);
+	if([self window]){
+		[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignMainNotification object:[self window]];
+		[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidBecomeMainNotification object:[self window]];
+	}
+	
+	if(window){
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNeedsDisplay) name:NSWindowDidResignMainNotification object:window];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNeedsDisplay) name:NSWindowDidBecomeMainNotification object:window];
+	}
+}
+
 -(void)drawRect:(NSRect)dirtyRect{
 	VSStyleSheet *sheet = self.styleSheet;
 	if(!sheet) sheet = [VSStyleSheet globalStyleSheet];
 	
-	VSStyle *style = [sheet styleWithSelector:self.styleName];
+	NSString *name = self.styleName;
+	if(![[self window] isMainWindow]){
+		NSLog(@"Not main!");
+		name = [name stringByAppendingString:@"Inactive"];
+	}
+	NSLog(@"Style named %@",name);
+	
+	VSStyle *style = [sheet styleWithSelector:name];
 	
 	VSStyleContext *context = [[[VSStyleContext alloc] init] autorelease];
 	context.frame = self.bounds;
+	context.contentFrame = self.bounds;
 	
 	[style draw:context];
 }
