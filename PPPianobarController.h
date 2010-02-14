@@ -29,17 +29,27 @@
 	NSString *password;
 	
 	PPFileHandleLineBuffer *pianobarReadLineBuffer;
+	PPFileHandleLineBuffer *pianobarReadErrorBuffer;
+
 	PPLineParser *pianobarParser;
 	PPLineParser *stationParser;
+	PPLineParser *playbackParser;
 	
 	NSArray *stations;
+	NSDictionary *selectedStation;
 	
 	NSFileHandle *pianobarReadHandle;
 	NSFileHandle *pianobarWriteHandle;
+	NSFileHandle *pianobarErrorHandle;
 	
 	id<PPPianobarDelegate> delegate;
 }
 
+@property (nonatomic, retain) NSDictionary *selectedStation;
+@property (nonatomic, retain) NSArray *stations;
 @property (nonatomic, assign) id<PPPianobarDelegate> delegate;
 
+-(void)playStationWithID:(NSString *)stationID;
+
+-(BOOL)isPlaying;
 @end

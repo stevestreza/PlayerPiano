@@ -13,6 +13,8 @@
     NSWindow *window;
 	
 	PPPianobarController *pianobar;
+	
+	IBOutlet NSArrayController *stationController;
 }
 
 @property (assign) IBOutlet NSWindow *window;

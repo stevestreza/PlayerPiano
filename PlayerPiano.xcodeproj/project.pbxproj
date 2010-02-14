@@ -24,42 +24,42 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1354B401354B401354B40000 /* libpiano.a */;
+			remoteGlobalIDString = 1354B401354B401354B40000;
 			remoteInfo = piano;
 		};
 		1EF23B58112745F100D04DD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 135870013587001358700000 /* libwardrobe.a */;
+			remoteGlobalIDString = 135870013587001358700000;
 			remoteInfo = wardrobe;
 		};
 		1EF23B5A112745F100D04DD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 136492013649201364920000 /* libwaitress.a */;
+			remoteGlobalIDString = 136492013649201364920000;
 			remoteInfo = waitress;
 		};
 		1EF23B5C112745F100D04DD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 23A26DA023A26DA023A26DA0 /* libezxml.a */;
+			remoteGlobalIDString = 23A26DA023A26DA023A26DA0;
 			remoteInfo = ezxml;
 		};
 		1EF23B5E112745F100D04DD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 23630F7023630F7023630F70 /* pianobar */;
+			remoteGlobalIDString = 23630F7023630F7023630F70;
 			remoteInfo = pianobar;
 		};
 		1EF23B8B112746E700D04DD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1199CA01199CA01199CA0000 /* pianobar */;
+			remoteGlobalIDString = 1199CA01199CA01199CA0000;
 			remoteInfo = pianobar;
 		};
 /* End PBXContainerItemProxy section */

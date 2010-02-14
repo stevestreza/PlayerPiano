@@ -11,7 +11,7 @@
 
 @implementation PPPianobarController
 
-@synthesize delegate;
+@synthesize delegate, stations, selectedStation;
 
 -(id)initWithUsername:(NSString *)aUsername password:(NSString *)aPassword{
 	if(self = [super init]){
@@ -39,6 +39,7 @@
 -(void)setupParsers{
 	pianobarParser = [[PPLineParser alloc] init];
 	stationParser = [[PPLineParser alloc] init];
+	playbackParser = [[PPLineParser alloc] init];
 	
 	[stationParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return YES;
@@ -47,14 +48,17 @@
 								 [line substringFromIndex: 15], @"name",
 								 [NSNumber numberWithInt:[[line substringToIndex:9] intValue]], @"id",
 								 nil];
+		
+		[self willChangeValueForKey:@"stations"];
 		[(NSMutableArray *)stations addObject:station];
+		[self  didChangeValueForKey:@"stations"];
 		
 		// if this is the last line, and there is an input waiting
 		if(![pianobarReadLineBuffer bufferHasUnprocessedLines] && [[pianobarReadLineBuffer bufferContents] rangeOfString:@"[?]"].location != NSNotFound){
 			NSLog(@"Done with stations, yo %@", stations);
 			pianobarReadLineBuffer.target = pianobarParser;
 			
-			[self writeStringToPianobar:@"2\n"];
+//			[self writeStringToPianobar:@"2\n"];
 		}
 	} copy] autorelease]]];
 	
@@ -80,6 +84,27 @@
 		NSLog(@"Could not login! %@",error);
 	} copy] autorelease]]];
 	
+	// detect station selection
+	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
+		return ([line rangeOfString:@"[?] Select station: "].location != NSNotFound);
+	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+		pianobarReadLineBuffer.target = playbackParser;
+	} copy] autorelease]]];
+	
+	// detect playback station
+	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
+		return ([line rangeOfString:@"|>  Station "].location != NSNotFound);
+	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+		NSLog(@"Got station name from %@",[[line componentsSeparatedByString:@"\""] objectAtIndex:1]);
+	} copy] autorelease]]];
+	
+	// detect playback song
+	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
+		return ([line rangeOfString:@"|>  "].location != NSNotFound);
+	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+		NSLog(@"Got a song out of %@",line);
+	} copy] autorelease]]];
+	
 	// detect stations
 	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"(i) Get stations... Ok."].location != NSNotFound);
@@ -87,6 +112,19 @@
 		pianobarReadLineBuffer.target = stationParser;
 	} copy] autorelease]]];
 	
+}
+
+-(void)playStationWithID:(NSString *)stationID{
+	if([self isPlaying]){
+		[self writeStringToPianobar:@"s"];
+	}
+	
+	[self writeStringToPianobar:stationID];
+	[self writeStringToPianobar:@"\n"];
+}
+
+-(BOOL)isPlaying{
+	return ([pianobarReadLineBuffer target] == playbackParser);
 }
 
 -(void)writeStringToPianobar:(NSString *)string{
@@ -117,6 +155,14 @@
 	pianobarReadLineBuffer.target = pianobarParser;
 	pianobarReadLineBuffer.action = @selector(parseLine:);
 	
+/*	pipe = [[NSPipe pipe] retain];
+	[pianobarTask setStandardError:pipe];
+	pianobarErrorHandle = [[pipe fileHandleForReading] retain];
+	
+	pianobarReadErrorBuffer = [[PPFileHandleLineBuffer alloc] initWithFileHandle:pianobarErrorHandle];
+	pianobarReadErrorBuffer.target = pianobarParser;
+	pianobarReadErrorBuffer.action = @selector(parseLine:);
+*/	
 	pipe = [[NSPipe pipe] retain];
 	[pianobarTask setStandardInput:pipe];
 	pianobarWriteHandle = [[pipe fileHandleForWriting] retain];
