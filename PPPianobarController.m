@@ -257,8 +257,8 @@
 															   toHaveTrait:NSBoldFontMask];
 		NSFont *restFont = [NSFont fontWithName:@"Helvetica Neue Light" size:16.0];
 		
-		NSColor *titleColor = [NSColor colorWithCalibratedWhite:0.1 alpha:1.0];
-		NSColor *restColor  = [NSColor colorWithCalibratedWhite:0.3 alpha:1.0];
+		NSColor *titleColor = [NSColor colorWithCalibratedWhite:0.8 alpha:1.0];
+		NSColor *restColor  = [NSColor colorWithCalibratedWhite:0.6 alpha:1.0];
 		
 		NSAttributedString *newline = [[[NSAttributedString alloc] initWithString:@"\n"] autorelease];
 		

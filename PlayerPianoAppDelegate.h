@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PPPianobarController.h"
+#import "PPStyleView.h"
 
 @interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
@@ -15,6 +16,9 @@
 	PPPianobarController *pianobar;
 	
 	IBOutlet NSArrayController *stationController;
+
+	IBOutlet NSView *backgroundContainer;
+	PPStyleView *backgroundView;
 }
 
 @property (assign) IBOutlet NSWindow *window;

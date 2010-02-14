@@ -16,6 +16,10 @@
 		1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CDF112883B700DC4EC7 /* MainMenu.xib */; };
 		1E774D5511288D3E00DC4EC7 /* VillainousStyle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1E774D4D11288D0700DC4EC7 /* VillainousStyle.framework */; };
 		1E774D5611288D4100DC4EC7 /* VillainousStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E774D4D11288D0700DC4EC7 /* VillainousStyle.framework */; };
+		1E774D5E11288DA600DC4EC7 /* PPStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774D5D11288DA600DC4EC7 /* PPStyleSheet.m */; };
+		1E774D6811288DFA00DC4EC7 /* VillainousStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E774D6711288DFA00DC4EC7 /* VillainousStyle.framework */; };
+		1E774DAD11288F2500DC4EC7 /* PPStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774DAC11288F2500DC4EC7 /* PPStyleView.m */; };
+		1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E774DF11128950C00DC4EC7 /* MainWindow.xib */; };
 		1EF23B8D112746F200D04DD7 /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23B5F112745F100D04DD7 /* pianobar */; };
 		1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BA2112747A800D04DD7 /* PPPianobarController.m */; };
 		1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */; };
@@ -125,6 +129,12 @@
 		1E774CDE112883B700DC4EC7 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1E774CE0112883B700DC4EC7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1E774D4211288D0700DC4EC7 /* VillainousStyle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VillainousStyle.xcodeproj; path = contrib/VillainousStyle/Source/VillainousStyle.xcodeproj; sourceTree = "<group>"; };
+		1E774D5C11288DA600DC4EC7 /* PPStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStyleSheet.h; sourceTree = "<group>"; };
+		1E774D5D11288DA600DC4EC7 /* PPStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStyleSheet.m; sourceTree = "<group>"; };
+		1E774D6711288DFA00DC4EC7 /* VillainousStyle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VillainousStyle.framework; path = contrib/VillainousStyle/Source/build/Debug/Mac/VillainousStyle.framework; sourceTree = "<group>"; };
+		1E774DAB11288F2500DC4EC7 /* PPStyleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStyleView.h; sourceTree = "<group>"; };
+		1E774DAC11288F2500DC4EC7 /* PPStyleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStyleView.m; sourceTree = "<group>"; };
+		1E774DF21128950C00DC4EC7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pianobar.xcodeproj; path = contrib/pianobar/build/pianobar.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1EF23BA1112747A800D04DD7 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPianobarController.h; sourceTree = "<group>"; };
 		1EF23BA2112747A800D04DD7 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
@@ -151,6 +161,7 @@
 			files = (
 				1E774D5611288D4100DC4EC7 /* VillainousStyle.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				1E774D6811288DFA00DC4EC7 /* VillainousStyle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +178,10 @@
 				1EF23BA2112747A800D04DD7 /* PPPianobarController.m */,
 				1E1B690911279E7C00F03465 /* NSString+TimeParsing.h */,
 				1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */,
+				1E774D5C11288DA600DC4EC7 /* PPStyleSheet.h */,
+				1E774D5D11288DA600DC4EC7 /* PPStyleSheet.m */,
+				1E774DAB11288F2500DC4EC7 /* PPStyleView.h */,
+				1E774DAC11288F2500DC4EC7 /* PPStyleView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -242,6 +257,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				1E774DF11128950C00DC4EC7 /* MainWindow.xib */,
 			);
 			name = PlayerPiano;
 			sourceTree = "<group>";
@@ -272,6 +288,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E774D6711288DFA00DC4EC7 /* VillainousStyle.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -400,6 +417,7 @@
 				1E774CD11128834E00DC4EC7 /* thumb-up.png in Resources */,
 				1E774CE1112883B700DC4EC7 /* InfoPlist.strings in Resources */,
 				1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */,
+				1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +435,8 @@
 				1EF23C2E11275A5B00D04DD7 /* PPLineRecognizer.m in Sources */,
 				1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */,
 				1E1B690B11279E7C00F03465 /* NSString+TimeParsing.m in Sources */,
+				1E774D5E11288DA600DC4EC7 /* PPStyleSheet.m in Sources */,
+				1E774DAD11288F2500DC4EC7 /* PPStyleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +472,14 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
+		1E774DF11128950C00DC4EC7 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E774DF21128950C00DC4EC7 /* English */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -460,6 +488,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/Debug/Mac\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -477,6 +509,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/Debug/Mac\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PlayerPiano_Prefix.pch;
