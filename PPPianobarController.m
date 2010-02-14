@@ -7,7 +7,7 @@
 //
 
 #import "PPPianobarController.h"
-
+#import "NSString+TimeParsing.h"
 
 @implementation PPPianobarController
 
@@ -124,11 +124,29 @@
 		pianobarReadLineBuffer.target = stationParser;
 	} copy] autorelease]]];
 	
+	//detect playback state
+	[playbackParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
+		return ([line rangeOfString:@"#  "].location != NSNotFound);
+	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+		NSArray *components = [[[line componentsSeparatedByString:@"-"] objectAtIndex:1] componentsSeparatedByString:@"/"];
+		NSString *timeLeft  = [components objectAtIndex:0];
+		NSString *timeTotal = [components objectAtIndex:1];
+		
+		NSTimeInterval timeLeftInterval  = [timeLeft  pp_timeIntervalValue];
+		NSTimeInterval timeTotalInterval = [timeTotal pp_timeIntervalValue];
+		
+		NSMutableDictionary *dict = [[self.nowPlaying mutableCopy] autorelease];
+		[dict setObject:[NSNumber numberWithDouble:timeTotalInterval-timeLeftInterval] forKey:@"timeSoFar"];
+		[dict setObject:[NSNumber numberWithDouble:timeTotalInterval] forKey:@"timeTotal"];
+		self.nowPlaying = dict;
+			
+//		NSLog(@"Got %g seconds left", (timeLeftInterval));
+	} copy] autorelease]]];
 }
 
 -(void)playStationWithID:(NSString *)stationID{
 	if([self isInPlaybackMode]){
-		[self writeStringToPianobar:@"s]"];
+		[self writeStringToPianobar:@"s"];
 	}
 	
 	[self writeStringToPianobar:stationID];
@@ -168,7 +186,7 @@
 }	
 
 -(void)writeStringToPianobar:(NSString *)string{
-//	NSLog(@"Writing: %@",string);
+	NSLog(@"Writing: %@",string);
 	[pianobarWriteHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
 }
 

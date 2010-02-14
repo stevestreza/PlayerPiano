@@ -22,10 +22,15 @@
 }
 
 -(void)parseLine:(NSString *)line{
+	BOOL win = NO;
 	for(PPLineRecognizer *recognizer in lineRecognizers){
 		if([recognizer testLine:line]){
+			win = YES;
 			break;
 		}
+	}
+	if(!win){
+ 		NSLog(@"Received unparsed line %@",line);
 	}
 }
 

@@ -15,7 +15,7 @@
 
 -(id)initWithFileHandle:(NSFileHandle *)handle{
 	if(self = [super init]){
-		buffer = [[NSMutableData dataWithCapacity:256] retain];
+		buffer = [[NSMutableString stringWithCapacity:256] retain];
 		
 		fileHandle = [handle retain];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataAvailable:) name:NSFileHandleDataAvailableNotification object:fileHandle];
@@ -35,20 +35,14 @@
 -(void)dataAvailable:(NSNotification *)notif{
 	NSData *data = [fileHandle availableData];
 	if(data && [data length] > 0){
-		[buffer appendData:data];
-		
-#define StringFromData(__dat) [[[NSString alloc] initWithData:__dat encoding:NSUTF8StringEncoding] autorelease]
-//		NSLog(@"Data get: '%@' \n\n%@\n\n", StringFromData(data), StringFromData(buffer) );
-		
-		NSData *newline = [@"\n" dataUsingEncoding:NSUTF8StringEncoding];
+		[buffer appendString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
 		
 		NSRange newlineRange = NSMakeRange(0, 0);
 		do{
-			newlineRange = [buffer rangeOfData:newline options:0 range:NSMakeRange(0,[buffer length])];
+			newlineRange = [buffer rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]];
 			if(newlineRange.location != NSNotFound){
-				NSData *lineData = [buffer subdataWithRange:NSMakeRange(0, newlineRange.location)];
-				NSString *line = [[[NSString alloc] initWithData:lineData encoding:NSUTF8StringEncoding] autorelease];
-				[buffer setData:[buffer subdataWithRange:NSMakeRange(newlineRange.location+1, buffer.length - newlineRange.location-1)]];
+				NSString *line = [buffer substringWithRange:NSMakeRange(0, newlineRange.location)];
+				[buffer setString:[buffer substringWithRange:NSMakeRange(newlineRange.location+1, buffer.length - newlineRange.location-1)]];
 
 //				NSLog(@"We gots a line! '%@'", line);
 				[self _sendLine:line];
@@ -60,7 +54,8 @@
 }
 
 -(NSString *)bufferContents{
-	return [[[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding] autorelease];
+//	return [[[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding] autorelease];
+	return buffer;
 }
 
 -(BOOL)bufferHasUnprocessedLines{

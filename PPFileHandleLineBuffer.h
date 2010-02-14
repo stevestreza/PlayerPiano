@@ -11,7 +11,7 @@
 
 @interface PPFileHandleLineBuffer : NSObject {
 	NSFileHandle *fileHandle;
-	NSMutableData *buffer;
+	NSMutableString *buffer;
 	
 	id target;
 	SEL action;
