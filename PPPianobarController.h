@@ -64,4 +64,6 @@
 -(IBAction)playPauseCurrentSong:(id)sender;
 -(IBAction)playNextSong:(id)sender;
 
+-(NSAttributedString *)nowPlayingAttributedDescription;
+
 @end

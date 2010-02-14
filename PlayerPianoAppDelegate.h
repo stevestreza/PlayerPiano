@@ -24,4 +24,7 @@
 -(IBAction)playPauseCurrentSong:(id)sender;
 -(IBAction)playNextSong:(id)sender;
 
+-(IBAction)handleThumbSegmentedControl:(id)sender;
+-(IBAction)handlePlaybackSegmentedControl:(id)sender;
+
 @end

@@ -18,6 +18,12 @@
 		return [NSSet setWithObjects:
 				@"isInPlaybackMode", @"isPlaying", @"isPaused",
 				nil];
+	}else if([key isEqualToString:@"nowPlaying"]){
+		return [NSSet setWithObjects:
+				@"nowPlayingAttributedDescription",
+				nil];
+	}else{
+		return [super keyPathsForValuesAffectingValueForKey:key];
 	}
 }
 
@@ -152,6 +158,15 @@
 	} copy] autorelease]]];
 }
 
+-(void)setNowPlaying:(NSDictionary *)aDict{
+	[self willChangeValueForKey:@"nowPlaying"];
+	[self willChangeValueForKey:@"nowPlayingAttributedDescription"];
+	[nowPlaying autorelease];
+	nowPlaying = [aDict copy];
+	[self didChangeValueForKey:@"nowPlayingAttributedDescription"];
+	[self didChangeValueForKey:@"nowPlaying"];
+}
+
 -(void)playStationWithID:(NSString *)stationID{
 	if([self isInPlaybackMode]){
 		[self writeStringToPianobar:@"s"];
@@ -232,6 +247,46 @@
 
 -(void)start{
 	[pianobarTask launch];
+}
+
+-(NSAttributedString *)nowPlayingAttributedDescription{
+	NSMutableAttributedString *description = [[[NSMutableAttributedString alloc] initWithString:@""] autorelease];
+	NSDictionary *playing = self.nowPlaying;
+	if(playing){
+		NSFont *titleFont = [[NSFontManager sharedFontManager] convertFont: [NSFont fontWithName:@"Helvetica" size:18.0]
+															   toHaveTrait:NSBoldFontMask];
+		NSFont *restFont = [NSFont fontWithName:@"Helvetica Neue Light" size:16.0];
+		
+		NSColor *titleColor = [NSColor colorWithCalibratedWhite:0.1 alpha:1.0];
+		NSColor *restColor  = [NSColor colorWithCalibratedWhite:0.3 alpha:1.0];
+		
+		NSAttributedString *newline = [[[NSAttributedString alloc] initWithString:@"\n"] autorelease];
+		
+		NSAttributedString *title = [[[NSAttributedString alloc] initWithString:[playing objectForKey:@"songTitle"]
+																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+																				 titleFont, NSFontAttributeName,
+																				 titleColor, NSForegroundColorAttributeName,
+																				 nil]] autorelease];
+		NSAttributedString *artist = [[[NSAttributedString alloc] initWithString:[@"by " stringByAppendingString:[playing objectForKey:@"songArtist"]]
+																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+																				 restFont, NSFontAttributeName,
+																				 restColor, NSForegroundColorAttributeName,
+																				 nil]] autorelease];
+		NSAttributedString *album = [[[NSAttributedString alloc] initWithString:[@"on " stringByAppendingString:[playing objectForKey:@"songAlbum"]]
+																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+																				 restFont, NSFontAttributeName,
+																				 restColor, NSForegroundColorAttributeName,
+																				 nil]] autorelease];
+		[description appendAttributedString:title];
+		[description appendAttributedString:newline];
+		[description appendAttributedString:artist];
+		[description appendAttributedString:newline];
+		[description appendAttributedString:album];
+	}
+	
+//	NSLog(@"Now playing attributed description! %@ -> %@",description, attributedDescription);
+	
+	return [[description copy] autorelease];
 }
 
 @end
