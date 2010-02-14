@@ -65,7 +65,6 @@
 }
 
 -(void)viewWillMoveToWindow:(NSWindow *)window{
-	NSLog(@"Weeeeee %@", window);
 	if([self window]){
 		[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignMainNotification object:[self window]];
 		[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidBecomeMainNotification object:[self window]];
@@ -83,10 +82,8 @@
 	
 	NSString *name = self.styleName;
 	if(![[self window] isMainWindow]){
-		NSLog(@"Not main!");
 		name = [name stringByAppendingString:@"Inactive"];
 	}
-	NSLog(@"Style named %@",name);
 	
 	VSStyle *style = [sheet styleWithSelector:name];
 	
