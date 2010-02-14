@@ -19,4 +19,9 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
+-(IBAction)thumbsUpCurrentSong:(id)sender;
+-(IBAction)thumbsDownCurrentSong:(id)sender;
+-(IBAction)playPauseCurrentSong:(id)sender;
+-(IBAction)playNextSong:(id)sender;
+
 @end

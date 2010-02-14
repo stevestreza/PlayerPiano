@@ -36,7 +36,11 @@
 	PPLineParser *playbackParser;
 	
 	NSArray *stations;
+
 	NSDictionary *selectedStation;
+	NSDictionary *nowPlaying;
+	
+	BOOL paused;
 	
 	NSFileHandle *pianobarReadHandle;
 	NSFileHandle *pianobarWriteHandle;
@@ -46,10 +50,18 @@
 }
 
 @property (nonatomic, retain) NSDictionary *selectedStation;
+@property (nonatomic, retain) NSDictionary *nowPlaying;
+
 @property (nonatomic, retain) NSArray *stations;
 @property (nonatomic, assign) id<PPPianobarDelegate> delegate;
 
 -(void)playStationWithID:(NSString *)stationID;
 
 -(BOOL)isPlaying;
+
+-(IBAction)thumbsUpCurrentSong:(id)sender;
+-(IBAction)thumbsDownCurrentSong:(id)sender;
+-(IBAction)playPauseCurrentSong:(id)sender;
+-(IBAction)playNextSong:(id)sender;
+
 @end

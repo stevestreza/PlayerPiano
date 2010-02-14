@@ -50,7 +50,7 @@
 				NSString *line = [[[NSString alloc] initWithData:lineData encoding:NSUTF8StringEncoding] autorelease];
 				[buffer setData:[buffer subdataWithRange:NSMakeRange(newlineRange.location+1, buffer.length - newlineRange.location-1)]];
 
-				NSLog(@"We gots a line! '%@'", line);
+//				NSLog(@"We gots a line! '%@'", line);
 				[self _sendLine:line];
 			}
 			

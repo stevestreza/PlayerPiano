@@ -11,7 +11,7 @@
 
 @implementation PPPianobarController
 
-@synthesize delegate, stations, selectedStation;
+@synthesize delegate, stations, selectedStation, nowPlaying;
 
 -(id)initWithUsername:(NSString *)aUsername password:(NSString *)aPassword{
 	if(self = [super init]){
@@ -88,21 +88,33 @@
 	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"[?] Select station: "].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+		NSLog(@"Switching to playback mode");
 		pianobarReadLineBuffer.target = playbackParser;
 	} copy] autorelease]]];
 	
 	// detect playback station
-	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
+	[playbackParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"|>  Station "].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
 		NSLog(@"Got station name from %@",[[line componentsSeparatedByString:@"\""] objectAtIndex:1]);
 	} copy] autorelease]]];
 	
 	// detect playback song
-	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
-		return ([line rangeOfString:@"|>  "].location != NSNotFound);
+	[playbackParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
+		return ([line rangeOfString:@"|>  \""].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
-		NSLog(@"Got a song out of %@",line);
+		NSArray *songComponents = [line componentsSeparatedByString:@"\""];
+		NSString *songTitle = [songComponents objectAtIndex:1];
+		NSString *songArtist = [songComponents objectAtIndex:3];
+		NSString *songAlbum = [songComponents objectAtIndex:5];
+		
+		self.nowPlaying = [NSDictionary dictionaryWithObjectsAndKeys:
+						   songTitle, @"songTitle",
+						   songArtist, @"songArtist",
+						   songAlbum, @"songAlbum",
+						   nil];
+		
+		NSLog(@"Now playing! %@",self.nowPlaying);
 	} copy] autorelease]]];
 	
 	// detect stations
@@ -115,20 +127,48 @@
 }
 
 -(void)playStationWithID:(NSString *)stationID{
-	if([self isPlaying]){
-		[self writeStringToPianobar:@"s"];
+	if([self isInPlaybackMode]){
+		[self writeStringToPianobar:@"s]"];
 	}
 	
 	[self writeStringToPianobar:stationID];
 	[self writeStringToPianobar:@"\n"];
 }
 
--(BOOL)isPlaying{
+-(BOOL)isInPlaybackMode{
 	return ([pianobarReadLineBuffer target] == playbackParser);
 }
 
+-(BOOL)isPaused{
+	return [self isInPlaybackMode] && paused;
+}
+
+-(IBAction)thumbsUpCurrentSong:(id)sender{
+	if([self isInPlaybackMode]){
+		[self writeStringToPianobar:@"+"];
+	}
+}
+
+-(IBAction)thumbsDownCurrentSong:(id)sender{
+	if([self isInPlaybackMode]){
+		[self writeStringToPianobar:@"-"];
+	}
+}
+
+-(IBAction)playPauseCurrentSong:(id)sender{
+	if([self isInPlaybackMode]){
+		[self writeStringToPianobar:@"p"];		
+	}
+}
+
+-(IBAction)playNextSong:(id)sender{
+	if([self isInPlaybackMode]){
+		[self writeStringToPianobar:@"n"];
+	}
+}	
+
 -(void)writeStringToPianobar:(NSString *)string{
-	NSLog(@"Writing: %@",string);
+//	NSLog(@"Writing: %@",string);
 	[pianobarWriteHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
