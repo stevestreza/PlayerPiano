@@ -22,6 +22,8 @@
 		1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E774DF11128950C00DC4EC7 /* MainWindow.xib */; };
 		1E774F701128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774F6F1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m */; };
 		1E774F8B1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774F8A1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m */; };
+		1E7D45DF1128FFB4001CA61F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7D45DE1128FFB4001CA61F /* play.png */; };
+		1E7D460D11291746001CA61F /* PPSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D460C11291746001CA61F /* PPSliderCell.m */; };
 		1EF23B8D112746F200D04DD7 /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23B5F112745F100D04DD7 /* pianobar */; };
 		1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BA2112747A800D04DD7 /* PPPianobarController.m */; };
 		1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */; };
@@ -141,6 +143,9 @@
 		1E774F6F1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+TitlebarAccessory.m"; sourceTree = "<group>"; };
 		1E774F891128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTitlebarAccessoryPopUpButton.h; sourceTree = "<group>"; };
 		1E774F8A1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTitlebarAccessoryPopUpButton.m; sourceTree = "<group>"; };
+		1E7D45DE1128FFB4001CA61F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		1E7D460B11291746001CA61F /* PPSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSliderCell.h; sourceTree = "<group>"; };
+		1E7D460C11291746001CA61F /* PPSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSliderCell.m; sourceTree = "<group>"; };
 		1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pianobar.xcodeproj; path = contrib/pianobar/build/pianobar.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1EF23BA1112747A800D04DD7 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPianobarController.h; sourceTree = "<group>"; };
 		1EF23BA2112747A800D04DD7 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
@@ -189,6 +194,8 @@
 				1E774DAC11288F2500DC4EC7 /* PPStyleView.m */,
 				1E774F891128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.h */,
 				1E774F8A1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m */,
+				1E7D460B11291746001CA61F /* PPSliderCell.h */,
+				1E7D460C11291746001CA61F /* PPSliderCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -292,6 +299,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1E7D45DE1128FFB4001CA61F /* play.png */,
 				8D1107310486CEB800E47090 /* PlayerPiano-Info.plist */,
 				1E774CDD112883B700DC4EC7 /* InfoPlist.strings */,
 				1E774CDF112883B700DC4EC7 /* MainMenu.xib */,
@@ -436,6 +444,7 @@
 				1E774CE1112883B700DC4EC7 /* InfoPlist.strings in Resources */,
 				1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */,
 				1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */,
+				1E7D45DF1128FFB4001CA61F /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +466,7 @@
 				1E774DAD11288F2500DC4EC7 /* PPStyleView.m in Sources */,
 				1E774F701128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m in Sources */,
 				1E774F8B1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m in Sources */,
+				1E7D460D11291746001CA61F /* PPSliderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

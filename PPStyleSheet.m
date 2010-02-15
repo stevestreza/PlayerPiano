@@ -88,4 +88,18 @@
 	;
 }
 
+-(VSStyle *)knobStyle{
+	return
+	[VSShadowStyle styleWithColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.75] blur:1.0 offset:CGSizeMake(0, 1) next:
+	[VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:10] next:
+	 [VSLinearGradientFillStyle styleWithColor1:[NSColor colorWithCalibratedWhite:0.75 alpha:1.0]
+										 color2:[NSColor colorWithCalibratedWhite:0.9 alpha:1.0]
+										   next:
+	  nil
+	  ]
+	 ]
+	 ]
+	;
+}
+
 @end

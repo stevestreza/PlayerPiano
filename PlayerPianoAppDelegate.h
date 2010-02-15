@@ -16,6 +16,7 @@
 	PPPianobarController *pianobar;
 	
 	IBOutlet NSArrayController *stationController;
+	IBOutlet NSSegmentedControl *playPauseNextSegmentedControl;
 
 	IBOutlet NSView *backgroundContainer;
 	IBOutlet NSView *progressBarContainer;

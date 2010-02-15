@@ -54,6 +54,8 @@
 @property (nonatomic, retain) NSArray *stations;
 @property (nonatomic, assign) id<PPPianobarDelegate> delegate;
 
+@property (nonatomic, assign) BOOL paused;
+
 -(void)playStationWithID:(NSString *)stationID;
 
 -(BOOL)isInPlaybackMode;

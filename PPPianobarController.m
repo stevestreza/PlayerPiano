@@ -11,10 +11,10 @@
 
 @implementation PPPianobarController
 
-@synthesize delegate, stations, selectedStation, nowPlaying;
+@synthesize delegate, stations, selectedStation, nowPlaying, paused;
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key{
-	if([key isEqualToString:@"target"]){
+	if([key isEqualToString:@"paused"]){
 		return [NSSet setWithObjects:
 				@"isInPlaybackMode", @"isPlaying", @"isPaused",
 				nil];
@@ -224,6 +224,10 @@
 -(IBAction)playPauseCurrentSong:(id)sender{
 	if([self isInPlaybackMode]){
 		[self writeStringToPianobar:@"p"];		
+		
+		[self willChangeValueForKey:@"isPlaying"];
+		self.paused = !self.paused;
+		[self  didChangeValueForKey:@"isPlaying"];
 	}
 }
 
