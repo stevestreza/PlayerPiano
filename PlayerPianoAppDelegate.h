@@ -18,8 +18,11 @@
 	IBOutlet NSArrayController *stationController;
 
 	IBOutlet NSView *backgroundContainer;
+	IBOutlet NSView *progressBarContainer;
 	PPStyleView *backgroundView;
 	PPStyleView *progressBar;
+	
+	IBOutlet NSView *titlebarAccessory;
 }
 
 @property (assign) IBOutlet NSWindow *window;

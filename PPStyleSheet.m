@@ -19,7 +19,7 @@
 							 bottom:[NSColor colorWithCalibratedWhite:1.0 alpha:0.5]
 							   left:[NSColor blackColor]
 							  width:1.0 next:
-	 [VSLinearGradientFillStyle styleWithColor1:[NSColor colorWithCalibratedWhite:0.20	 alpha:1.0]
+	 [VSLinearGradientFillStyle styleWithColor1:[NSColor colorWithCalibratedWhite:0.16	 alpha:1.0]
 										 color2:[NSColor colorWithCalibratedWhite:0.02 alpha:1.0]
 										   next:
 	  nil
@@ -35,7 +35,7 @@
 							 bottom:[NSColor colorWithCalibratedWhite:1.0 alpha:0.5]
 							   left:[NSColor blackColor]
 							  width:1.0 next:
-	 [VSLinearGradientFillStyle styleWithColor1:[NSColor colorWithCalibratedWhite:0.30	 alpha:1.0]
+	 [VSLinearGradientFillStyle styleWithColor1:[NSColor colorWithCalibratedWhite:0.26	 alpha:1.0]
 										 color2:[NSColor colorWithCalibratedWhite:0.19 alpha:1.0]
 										   next:
 	  nil
@@ -78,7 +78,7 @@
 									 blur:3.
 								   offset:CGSizeMake(0,0)
 									 next:
-		[VSSolidFillStyle styleWithColor:[NSColor colorWithCalibratedWhite:0.8 alpha:1.0] next:
+		[VSSolidFillStyle styleWithColor:[NSColor colorWithCalibratedWhite:0.74 alpha:1.0] next:
 		 nil
 		 ]
 		]

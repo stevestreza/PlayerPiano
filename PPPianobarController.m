@@ -58,6 +58,7 @@
 	[stationParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return YES;
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+
 		NSDictionary *station = [NSDictionary dictionaryWithObjectsAndKeys:
 								 [line substringFromIndex: 15], @"name",
 								 [NSNumber numberWithInt:[[line substringToIndex:9] intValue]], @"id",
@@ -74,49 +75,64 @@
 			
 //			[self writeStringToPianobar:@"2\n"];
 		}
+
 	} copy] autorelease]]];
 	
 	// detect "Welcome to pianobar", send username
 	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"Welcome to pianobar!"].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+
 		[self writeStringToPianobar:[username stringByAppendingString:@"\n"]];
+
 	} copy] autorelease]]];
 	
 	// detect username, send password
 	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"[?] Username: "].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+
 		[self writeStringToPianobar:[password stringByAppendingString:@"\n"]];
+
 	} copy] autorelease]]];
 	
 	// detect login error
 	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"(i) Login... Error"].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+
 		NSString *error = [line stringByReplacingOccurrencesOfString:@"(i) Login... Error: " withString:@""];
 		NSLog(@"Could not login! %@",error);
+
 	} copy] autorelease]]];
 	
 	// detect station selection
 	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"[?] Select station: "].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+		
 		NSLog(@"Switching to playback mode");
 		pianobarReadLineBuffer.target = playbackParser;
+
 	} copy] autorelease]]];
 	
 	// detect playback station
 	[playbackParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"|>  Station "].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
-//		NSLog(@"Got station name from %@",[[line componentsSeparatedByString:@"\""] objectAtIndex:1]);
+	
+		if([delegate respondsToSelector:@selector(pianobar:didBeginPlayingChannel:)]){
+			NSString *channelName = [[line componentsSeparatedByString:@"\""] objectAtIndex:1];
+			[delegate pianobar:self didBeginPlayingChannel:channelName];
+		}
+
 	} copy] autorelease]]];
 	
 	// detect playback song
 	[playbackParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"|>  \""].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+
 		NSArray *songComponents = [line componentsSeparatedByString:@"\""];
 		NSString *songTitle = [songComponents objectAtIndex:1];
 		NSString *songArtist = [songComponents objectAtIndex:3];
@@ -129,19 +145,23 @@
 						   nil];
 		
 //		NSLog(@"Now playing! %@",self.nowPlaying);
+
 	} copy] autorelease]]];
 	
 	// detect stations
 	[pianobarParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"(i) Get stations... Ok."].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+
 		pianobarReadLineBuffer.target = stationParser;
+
 	} copy] autorelease]]];
 	
 	//detect playback state
 	[playbackParser addLineRecognizer:[PPLineRecognizer recognizerWithRecognizerBlock:[[^BOOL(NSString *line){
 		return ([line rangeOfString:@"#  "].location != NSNotFound);
 	} copy] autorelease] performingActionBlock:[[^(NSString *line){
+
 		NSArray *components = [[[line componentsSeparatedByString:@"-"] objectAtIndex:1] componentsSeparatedByString:@"/"];
 		NSString *timeLeft  = [components objectAtIndex:0];
 		NSString *timeTotal = [components objectAtIndex:1];
@@ -155,6 +175,7 @@
 		self.nowPlaying = dict;
 			
 //		NSLog(@"Got %g seconds left", (timeLeftInterval));
+
 	} copy] autorelease]]];
 }
 

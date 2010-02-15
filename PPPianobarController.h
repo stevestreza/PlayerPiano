@@ -19,6 +19,7 @@
 -(void)pianobarDidLogin:(PPPianobarController *)pianobar;
 
 -(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(NSDictionary *)song;
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingChannel:(NSString *)channel;
 
 @end
 

@@ -20,6 +20,8 @@
 		1E774D6811288DFA00DC4EC7 /* VillainousStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E774D6711288DFA00DC4EC7 /* VillainousStyle.framework */; };
 		1E774DAD11288F2500DC4EC7 /* PPStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774DAC11288F2500DC4EC7 /* PPStyleView.m */; };
 		1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E774DF11128950C00DC4EC7 /* MainWindow.xib */; };
+		1E774F701128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774F6F1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m */; };
+		1E774F8B1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774F8A1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m */; };
 		1EF23B8D112746F200D04DD7 /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = 1EF23B5F112745F100D04DD7 /* pianobar */; };
 		1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BA2112747A800D04DD7 /* PPPianobarController.m */; };
 		1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */; };
@@ -35,28 +37,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E774D4211288D0700DC4EC7 /* VillainousStyle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1E0FDD5B101A79DF007AFA92 /* VillainousStyle.framework */;
+			remoteGlobalIDString = 1E0FDD5B101A79DF007AFA92;
 			remoteInfo = VillainousStyle.framework;
 		};
 		1E774D4E11288D0700DC4EC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E774D4211288D0700DC4EC7 /* VillainousStyle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1E3123CB10AD256C00D72994 /* libVillainousStyle.a */;
+			remoteGlobalIDString = 1E3123CB10AD256C00D72994;
 			remoteInfo = "libVillainousStyle.a - iPhone";
 		};
 		1E774D5011288D0700DC4EC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E774D4211288D0700DC4EC7 /* VillainousStyle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1E5CFFBA10ED61E600B7B095 /* libVillainousStyle.a */;
+			remoteGlobalIDString = 1E5CFFBA10ED61E600B7B095;
 			remoteInfo = "libVillainousStyle.a - Mac";
 		};
 		1E774D5211288D2100DC4EC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E774D4211288D0700DC4EC7 /* VillainousStyle.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E0FDD5A101A79DF007AFA92 /* VillainousStyle.framework */;
+			remoteGlobalIDString = 1E0FDD5A101A79DF007AFA92;
 			remoteInfo = VillainousStyle.framework;
 		};
 		1EF23B56112745F100D04DD7 /* PBXContainerItemProxy */ = {
@@ -135,6 +137,10 @@
 		1E774DAB11288F2500DC4EC7 /* PPStyleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStyleView.h; sourceTree = "<group>"; };
 		1E774DAC11288F2500DC4EC7 /* PPStyleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStyleView.m; sourceTree = "<group>"; };
 		1E774DF21128950C00DC4EC7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		1E774F6E1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+TitlebarAccessory.h"; sourceTree = "<group>"; };
+		1E774F6F1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+TitlebarAccessory.m"; sourceTree = "<group>"; };
+		1E774F891128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTitlebarAccessoryPopUpButton.h; sourceTree = "<group>"; };
+		1E774F8A1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTitlebarAccessoryPopUpButton.m; sourceTree = "<group>"; };
 		1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pianobar.xcodeproj; path = contrib/pianobar/build/pianobar.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1EF23BA1112747A800D04DD7 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPianobarController.h; sourceTree = "<group>"; };
 		1EF23BA2112747A800D04DD7 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
@@ -171,17 +177,18 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1E774F731128E59F00DC4EC7 /* Categories */,
 				1EF23C2F11275BBE00D04DD7 /* Line Reading */,
 				256AC3D80F4B6AC300CF3369 /* PlayerPianoAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */,
 				1EF23BA1112747A800D04DD7 /* PPPianobarController.h */,
 				1EF23BA2112747A800D04DD7 /* PPPianobarController.m */,
-				1E1B690911279E7C00F03465 /* NSString+TimeParsing.h */,
-				1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */,
 				1E774D5C11288DA600DC4EC7 /* PPStyleSheet.h */,
 				1E774D5D11288DA600DC4EC7 /* PPStyleSheet.m */,
 				1E774DAB11288F2500DC4EC7 /* PPStyleView.h */,
 				1E774DAC11288F2500DC4EC7 /* PPStyleView.m */,
+				1E774F891128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.h */,
+				1E774F8A1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -220,6 +227,17 @@
 				1E774D5111288D0700DC4EC7 /* libVillainousStyle.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1E774F731128E59F00DC4EC7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1E1B690911279E7C00F03465 /* NSString+TimeParsing.h */,
+				1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */,
+				1E774F6E1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.h */,
+				1E774F6F1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		1EF23B4D112745F100D04DD7 /* Products */ = {
@@ -437,6 +455,8 @@
 				1E1B690B11279E7C00F03465 /* NSString+TimeParsing.m in Sources */,
 				1E774D5E11288DA600DC4EC7 /* PPStyleSheet.m in Sources */,
 				1E774DAD11288F2500DC4EC7 /* PPStyleView.m in Sources */,
+				1E774F701128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m in Sources */,
+				1E774F8B1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
