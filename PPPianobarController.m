@@ -172,6 +172,7 @@
 		NSMutableDictionary *dict = [[self.nowPlaying mutableCopy] autorelease];
 		[dict setObject:[NSNumber numberWithDouble:timeTotalInterval-timeLeftInterval] forKey:@"timeSoFar"];
 		[dict setObject:[NSNumber numberWithDouble:timeTotalInterval] forKey:@"timeTotal"];
+		[dict setObject:[NSNumber numberWithDouble:timeLeftInterval ] forKey:@"timeLeft" ];
 		self.nowPlaying = dict;
 			
 //		NSLog(@"Got %g seconds left", (timeLeftInterval));
