@@ -6,7 +6,7 @@
 //  Copyright 2010 Villainware.
 //
 //  See LICENSE.md file in the PlayerPiano source directory, or at
-//  http://github.com/amazingsyco/PlayerPiano/LICENSE.md
+//  http://github.com/amazingsyco/PlayerPiano/blob/master/LICENSE.md
 //
 
 #import "PPSliderCell.h"
