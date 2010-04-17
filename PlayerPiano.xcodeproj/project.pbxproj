@@ -103,7 +103,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1199CA01199CA01199CA0000;
+			remoteGlobalIDString = 23C08AD023C08AD023C08AD0 /* pianobar */;
 			remoteInfo = pianobar;
 		};
 /* End PBXContainerItemProxy section */
