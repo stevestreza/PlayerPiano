@@ -15,7 +15,7 @@ Dependencies
 Install
 =======
 
-*NOTE:* These instructions are not quite working. I'm trying to make the projects build a universal application which is self-contained. Some of the dependent libraries are making this difficult. To work around for now, you'll need to build pianobar and its libraries manually first. Once you have that working, you'll need to drop the pianboar executable inside the application binary, and it'll work. Sorry for the royal pain in the ass that this is. :)
+**NOTE: These instructions are not quite working. I'm trying to make the projects build a universal application which is self-contained. Some of the dependent libraries are making this difficult. To work around for now, you'll need to build pianobar and its libraries manually first. Once you have that working, you'll need to drop the pianboar executable inside the application binary, and it'll work. Sorry for the royal pain in the ass that this is. :)**
 
 1. `git clone git://github.com/amazingsyco/PlayerPiano.git`
 2. `cd PlayerPiano`
