@@ -10,7 +10,7 @@ Dependencies
 
 * [VillainousStyle](http://github.com/amazingsyco/VillainousStyle)
 * [pianobar](http://github.com/PromyLOPh/pianobar)
-** [...and pianobar's dependencies](http://github.com/PromyLOPh/pianobar/blob/master/INSTALL)
+  * [...and pianobar's dependencies](http://github.com/PromyLOPh/pianobar/blob/master/INSTALL)
 
 Install
 =======
