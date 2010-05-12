@@ -21,9 +21,8 @@
 	IBOutlet NSArrayController *stationController;
 	IBOutlet NSSegmentedControl *playPauseNextSegmentedControl;
 
-	IBOutlet NSView *backgroundContainer;
+	IBOutlet PPStyleView *backgroundContainer;
 	IBOutlet NSView *progressBarContainer;
-	PPStyleView *backgroundView;
 	PPStyleView *progressBar;
 	
 	IBOutlet NSView *titlebarAccessory;

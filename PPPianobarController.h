@@ -70,7 +70,9 @@
 -(IBAction)playPauseCurrentSong:(id)sender;
 -(IBAction)playNextSong:(id)sender;
 
--(NSAttributedString *)nowPlayingAttributedDescription;
+- (NSString *)nowPlayingTitle;
+- (NSString *)nowPlayingArtist;
+- (NSString *)nowPlayingAlbum;
 
 -(void)start;
 -(void)stop;

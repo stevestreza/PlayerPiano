@@ -22,10 +22,8 @@
 	[PPStyleSheet class];
 	[PPTimeIntervalTransformer class];
 	
-	backgroundView = [[PPStyleView alloc] initWithFrame:backgroundContainer.bounds];
-	[backgroundContainer addSubview:backgroundView];
-	backgroundView.styleName = @"backgroundStyle";
-	[backgroundView setNeedsDisplay];
+	backgroundContainer.styleName = @"backgroundStyle";
+	[backgroundContainer setNeedsDisplay];
 	
 	progressBar = [[PPStyleView alloc] initWithFrame:progressBarContainer.bounds];
 	[progressBarContainer addSubview:progressBar];
