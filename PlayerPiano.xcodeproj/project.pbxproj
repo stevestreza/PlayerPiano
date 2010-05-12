@@ -32,6 +32,7 @@
 		256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C9ECB2DE119B2EC90075E08B /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = C9ECB1F7119AA2340075E08B /* pianobar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,6 +389,7 @@
 				1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */,
 				1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */,
 				1E7D45DF1128FFB4001CA61F /* play.png in Resources */,
+				C9ECB2DE119B2EC90075E08B /* pianobar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
