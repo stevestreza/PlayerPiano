@@ -23,7 +23,7 @@
 
 @synthesize styleName, styleSheet;
 
--(void)initWithCoder:(NSCoder *)aDecoder{
+-(id)initWithCoder:(NSCoder *)aDecoder{
 	if(self = [super initWithCoder:aDecoder]){
 		[self _awake];
 	}
