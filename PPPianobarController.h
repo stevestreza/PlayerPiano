@@ -69,10 +69,7 @@
 -(IBAction)thumbsDownCurrentSong:(id)sender;
 -(IBAction)playPauseCurrentSong:(id)sender;
 -(IBAction)playNextSong:(id)sender;
-
-- (NSString *)nowPlayingTitle;
-- (NSString *)nowPlayingArtist;
-- (NSString *)nowPlayingAlbum;
+-(IBAction)openInStore:(id)sender;
 
 -(void)start;
 -(void)stop;

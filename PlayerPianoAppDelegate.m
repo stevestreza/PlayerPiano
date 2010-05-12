@@ -13,6 +13,7 @@
 #import "PPStyleSheet.h"
 #import "NSWindow+TitlebarAccessory.h"
 #import "PPTimeIntervalTransformer.h"
+#import "PPGrowingTextField.h"
 
 @implementation PlayerPianoAppDelegate
 
@@ -29,6 +30,9 @@
 	[progressBarContainer addSubview:progressBar];
 	progressBar.styleName = @"progressBarStyle";
 	[progressBar setNeedsDisplay];
+	
+	titleField.maxWidth = [titleField frame].size.width;
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleFrameDidChange:) name:NSViewFrameDidChangeNotification object:titleField];
 	
 	NSString *pandoraEmail = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraEmail"];
 	NSString *pandoraPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraPassword"];
@@ -69,6 +73,13 @@
 	pianobar = nil;
 }
 
+- (void)titleFrameDidChange:(NSNotification *)notification
+{
+	NSPoint origin = [iTunesButton frame].origin;
+	origin.x = NSMaxX([titleField frame]) + 8.0f;
+	[iTunesButton setFrameOrigin:origin];
+}
+
 -(IBAction)thumbsUpCurrentSong:(id)sender{
 	[pianobar thumbsUpCurrentSong:sender];
 }
@@ -101,6 +112,10 @@
 	}else if(segment == 1){
 		[self playNextSong:sender];
 	}
+}
+
+-(IBAction)openInStore:(id)sender{
+	[pianobar openInStore:self];
 }
 
 -(IBAction)quit:(id)sender{

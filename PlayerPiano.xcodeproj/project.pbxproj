@@ -31,6 +31,8 @@
 		256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C90D01F1119B551E00769A44 /* PPITunesButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D01F0119B551E00769A44 /* PPITunesButtonCell.m */; };
+		C90D021C119B5C0400769A44 /* PPGrowingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D021B119B5C0400769A44 /* PPGrowingTextField.m */; };
 		C9ECB2DE119B2EC90075E08B /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = C9ECB1F7119AA2340075E08B /* pianobar */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,10 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* PlayerPiano-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PlayerPiano-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* PlayerPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayerPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90D01EF119B551E00769A44 /* PPITunesButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPITunesButtonCell.h; sourceTree = "<group>"; };
+		C90D01F0119B551E00769A44 /* PPITunesButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPITunesButtonCell.m; sourceTree = "<group>"; };
+		C90D021A119B5C0400769A44 /* PPGrowingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPGrowingTextField.h; sourceTree = "<group>"; };
+		C90D021B119B5C0400769A44 /* PPGrowingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPGrowingTextField.m; sourceTree = "<group>"; };
 		C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pianobar.xcodeproj; path = contrib/pianobar/pianobar.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +177,10 @@
 				1E7D460C11291746001CA61F /* PPSliderCell.m */,
 				1E7D467511291C80001CA61F /* PPTimeIntervalTransformer.h */,
 				1E7D467611291C80001CA61F /* PPTimeIntervalTransformer.m */,
+				C90D01EF119B551E00769A44 /* PPITunesButtonCell.h */,
+				C90D01F0119B551E00769A44 /* PPITunesButtonCell.m */,
+				C90D021A119B5C0400769A44 /* PPGrowingTextField.h */,
+				C90D021B119B5C0400769A44 /* PPGrowingTextField.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -409,6 +419,8 @@
 				1E774F8B1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m in Sources */,
 				1E7D460D11291746001CA61F /* PPSliderCell.m in Sources */,
 				1E7D467711291C80001CA61F /* PPTimeIntervalTransformer.m in Sources */,
+				C90D01F1119B551E00769A44 /* PPITunesButtonCell.m in Sources */,
+				C90D021C119B5C0400769A44 /* PPGrowingTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

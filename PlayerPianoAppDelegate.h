@@ -13,6 +13,8 @@
 #import "PPPianobarController.h"
 #import "PPStyleView.h"
 
+@class PPGrowingTextField;
+
 @interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
 	
@@ -25,6 +27,9 @@
 	IBOutlet NSView *progressBarContainer;
 	PPStyleView *progressBar;
 	
+	IBOutlet PPGrowingTextField *titleField;
+	IBOutlet NSButton *iTunesButton;
+	
 	IBOutlet NSView *titlebarAccessory;
 }
 
@@ -34,6 +39,7 @@
 -(IBAction)thumbsDownCurrentSong:(id)sender;
 -(IBAction)playPauseCurrentSong:(id)sender;
 -(IBAction)playNextSong:(id)sender;
+-(IBAction)openInStore:(id)sender;
 
 -(IBAction)handleThumbSegmentedControl:(id)sender;
 -(IBAction)handlePlaybackSegmentedControl:(id)sender;

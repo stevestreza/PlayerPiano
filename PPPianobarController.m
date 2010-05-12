@@ -14,6 +14,8 @@
 
 @interface PPPianobarController ()
 - (void)writeStringToPianobar:(NSString *)string;
+-(NSURL *)iTunesLink;
+-(NSURL *)amazonLink;
 @end
 
 @implementation PPPianobarController
@@ -291,64 +293,29 @@
 	pianobarTask = nil;
 }
 
-+ (NSSet *)keyPathsForValuesAffectingNowPlayingTitle
+-(IBAction)openInStore:(id)sender
 {
-	return [NSSet setWithObjects:@"nowPlaying", nil];
-}
-
-- (NSString *)nowPlayingTitle
-{
-	NSDictionary *playing = self.nowPlaying;
-	if(playing){
-		/*NSFont *titleFont = [[NSFontManager sharedFontManager] convertFont: [NSFont fontWithName:@"Helvetica" size:18.0]
-															   toHaveTrait:NSBoldFontMask];
-		NSColor *titleColor = [NSColor colorWithCalibratedWhite:0.8 alpha:1.0];
-		
-		NSAttributedString *title = [[[NSAttributedString alloc] initWithString:[playing objectForKey:@"songTitle"]
-																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																				 titleFont, NSFontAttributeName,
-																				 titleColor, NSForegroundColorAttributeName,
-																				 nil]] autorelease];
-		return [[title copy] autorelease];*/
-		return [[[playing objectForKey:@"songTitle"] copy] autorelease];
+	NSURL *link;
+	if ([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask) {
+		link = [self amazonLink];
+	} else {
+		link = [self iTunesLink];
 	}
-	return NSLocalizedString(@"No Selection", @"Title placeholder");
+
+	[[NSWorkspace sharedWorkspace] openURL:link];
 }
 
-+ (NSSet *)keyPathsForValuesAffectingNowPlayingArtist
+-(NSURL *)iTunesLink
 {
-	return [NSSet setWithObjects:@"nowPlaying", nil];
+	NSString *link = [[[NSString stringWithFormat:@"itms://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=%@&artistTerm=%@", [[self nowPlaying] objectForKey:@"songTitle"], [[self nowPlaying] objectForKey:@"songArtist"]] copy] autorelease];
+	return [NSURL URLWithString:[link stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
 }
 
-- (NSString *)nowPlayingArtist
+-(NSURL *)amazonLink
 {
-	NSDictionary *playing = self.nowPlaying;
-	if(playing){
-	/*	NSFont *restFont = [NSFont fontWithName:@"Helvetica Neue Light" size:16.0];
-		NSColor *restColor  = [NSColor colorWithCalibratedWhite:0.6 alpha:1.0];
-		
-		NSAttributedString *artist = [[[NSAttributedString alloc] initWithString:[@"by " stringByAppendingString:[playing objectForKey:@"songArtist"]]
-																	  attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																				  restFont, NSFontAttributeName,
-																				  restColor, NSForegroundColorAttributeName,
-																				  nil]] autorelease];*/
-		return [[[playing objectForKey:@"songArtist"] copy] autorelease];
-	}
-	return @"";
-}
-
-+ (NSSet *)keyPathsForValuesAffectingNowPlayingAlbum
-{
-	return [NSSet setWithObjects:@"nowPlaying", nil];
-}
-
-- (NSString *)nowPlayingAlbum
-{
-	NSDictionary *playing = self.nowPlaying;
-	if(playing){
-		return [[[playing objectForKey:@"songAlbum"] copy] autorelease];
-	}
-	return @"";
+	NSString *searchTerm = [NSString stringWithFormat:@"%@ %@", [[self nowPlaying] objectForKey:@"songTitle"], [[self nowPlaying] objectForKey:@"songArtist"]];
+	searchTerm = [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+	return [[[NSURL URLWithString:[NSString stringWithFormat:@"http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias=digital-music&field-keywords=%@", searchTerm]] copy] autorelease];
 }
 
 @end
