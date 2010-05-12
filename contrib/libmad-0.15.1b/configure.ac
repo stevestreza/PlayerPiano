@@ -128,7 +128,7 @@ then
     then
 	case "$host" in
 	    i386-*)           ;;
-	    i?86-*)           arch="-march=i486" ;;
+	    i?86-*)           arch="" ;;
 	    arm*-empeg-*)     arch="-march=armv4 -mtune=strongarm1100" ;;
 	    armv4*-*)         arch="-march=armv4 -mtune=strongarm" ;;
 	    powerpc-*)        ;;
