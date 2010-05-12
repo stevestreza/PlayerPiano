@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E1B690B11279E7C00F03465 /* NSString+TimeParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */; };
 		1E774CCE1128834E00DC4EC7 /* next-song.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCA1128834E00DC4EC7 /* next-song.png */; };
-		1E774CCF1128834E00DC4EC7 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCB1128834E00DC4EC7 /* pause.png */; };
 		1E774CD01128834E00DC4EC7 /* thumb-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCC1128834E00DC4EC7 /* thumb-down.png */; };
 		1E774CD11128834E00DC4EC7 /* thumb-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCD1128834E00DC4EC7 /* thumb-up.png */; };
 		1E774CE1112883B700DC4EC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CDD112883B700DC4EC7 /* InfoPlist.strings */; };
@@ -100,7 +99,6 @@
 		1E1B690911279E7C00F03465 /* NSString+TimeParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeParsing.h"; sourceTree = "<group>"; };
 		1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeParsing.m"; sourceTree = "<group>"; };
 		1E774CCA1128834E00DC4EC7 /* next-song.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next-song.png"; sourceTree = "<group>"; };
-		1E774CCB1128834E00DC4EC7 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		1E774CCC1128834E00DC4EC7 /* thumb-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-down.png"; sourceTree = "<group>"; };
 		1E774CCD1128834E00DC4EC7 /* thumb-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-up.png"; sourceTree = "<group>"; };
 		1E774CDE112883B700DC4EC7 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -269,7 +267,6 @@
 				1E774CDD112883B700DC4EC7 /* InfoPlist.strings */,
 				1E774CDF112883B700DC4EC7 /* MainMenu.xib */,
 				1E774CCA1128834E00DC4EC7 /* next-song.png */,
-				1E774CCB1128834E00DC4EC7 /* pause.png */,
 				1E774CCC1128834E00DC4EC7 /* thumb-down.png */,
 				1E774CCD1128834E00DC4EC7 /* thumb-up.png */,
 			);
@@ -382,7 +379,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E774CCE1128834E00DC4EC7 /* next-song.png in Resources */,
-				1E774CCF1128834E00DC4EC7 /* pause.png in Resources */,
 				1E774CD01128834E00DC4EC7 /* thumb-down.png in Resources */,
 				1E774CD11128834E00DC4EC7 /* thumb-up.png in Resources */,
 				1E774CE1112883B700DC4EC7 /* InfoPlist.strings in Resources */,
