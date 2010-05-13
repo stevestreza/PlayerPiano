@@ -1,6 +1,3 @@
-[submodule "contrib/pianobar"]
-	path = contrib/pianobar
-	url = git://github.com/amazingsyco/pianobar.git
 [submodule "contrib/VillainousStyle"]
 	path = contrib/VillainousStyle
 	url = git://github.com/amazingsyco/VillainousStyle.git
