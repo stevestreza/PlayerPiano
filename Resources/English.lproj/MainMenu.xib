@@ -12,9 +12,9 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="605"/>
-			<integer value="57"/>
 			<integer value="622"/>
+			<integer value="57"/>
+			<integer value="605"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2761,6 +2761,46 @@
 					</object>
 					<int key="connectionID">709</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: selection.songArtist</string>
+						<reference key="source" ref="624865290"/>
+						<reference key="destination" ref="653585522"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="624865290"/>
+							<reference key="NSDestination" ref="653585522"/>
+							<string key="NSLabel">hidden: selection.songArtist</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">selection.songArtist</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSNoSelectionPlaceholder</string>
+								<integer value="1" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">711</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: selection.songAlbum</string>
+						<reference key="source" ref="224385402"/>
+						<reference key="destination" ref="653585522"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="224385402"/>
+							<reference key="NSDestination" ref="653585522"/>
+							<string key="NSLabel">hidden: selection.songAlbum</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">selection.songAlbum</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSNoSelectionPlaceholder</string>
+								<integer value="1" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">713</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -4429,7 +4469,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{380, 736}, {448, 20}}</string>
+					<string>{{252, 736}, {448, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{74, 862}</string>
@@ -4538,16 +4578,16 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{392, 553}, {213, 183}}</string>
+					<string>{{264, 553}, {213, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{23, 794}, {245, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{7, 572}, {320, 146}}</string>
+					<string>{{61, 528}, {320, 146}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{7, 572}, {320, 146}}</string>
+					<string>{{61, 528}, {320, 146}}</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4629,7 +4669,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">709</int>
+			<int key="maxID">713</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
