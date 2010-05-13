@@ -523,7 +523,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/Debug/Mac\"",
-					"\"/Users/jweinberg/Developer/player/pianobar/build/Debug\"",
+					"\"$(SRCROOT)/contrib/pianobar/build/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
