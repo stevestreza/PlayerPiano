@@ -1,3 +1,6 @@
 [submodule "contrib/VillainousStyle"]
 	path = contrib/VillainousStyle
 	url = git://github.com/amazingsyco/VillainousStyle.git
+[submodule "contrib/pianobar"]
+	path = contrib/pianobar
+	url = git://github.com/jweinberg/pianobar.git
