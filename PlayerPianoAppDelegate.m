@@ -36,8 +36,9 @@
 	NSString *pandoraPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraPassword"];
 	
 	[self willChangeValueForKey:@"pianobar"];
-	pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail password:pandoraPassword];
-	[pianobar start];
+	pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail andPassword:pandoraPassword];
+	[pianobar login];
+    [pianobar loadStations];
 	[self  didChangeValueForKey:@"pianobar"];
 	
 	[pianobar addObserver:self forKeyPath:@"selectedStation" options:0 context:@"stationController.selection"];

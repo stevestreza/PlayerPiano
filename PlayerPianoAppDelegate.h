@@ -10,7 +10,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PPPianobarController.h"
+#import <PianoBar/PPPianobarController.h>
 #import "PPStyleView.h"
 
 @interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate> {
