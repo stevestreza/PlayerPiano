@@ -29,6 +29,7 @@
 		1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C3A11275C6100D04DD7 /* PPLineParser.m */; };
 		256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */; };
 		820CCFAB119C93C900538AF0 /* PianoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820CCF8B119C931F00538AF0 /* PianoBar.framework */; };
+		820CD00D119C953300538AF0 /* PianoBar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 820CCF8B119C931F00538AF0 /* PianoBar.framework */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -66,42 +67,42 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1E10571B119A6A25008CC292 /* libezxml.a */;
+			remoteGlobalIDString = 1E10571B119A6A25008CC292;
 			remoteInfo = libezxml;
 		};
 		820CCF84119C931F00538AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1E105722119A6A2D008CC292 /* libwaitress.a */;
+			remoteGlobalIDString = 1E105722119A6A2D008CC292;
 			remoteInfo = libwaitress;
 		};
 		820CCF86119C931F00538AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1E105729119A6A33008CC292 /* libpiano.a */;
+			remoteGlobalIDString = 1E105729119A6A33008CC292;
 			remoteInfo = libpiano;
 		};
 		820CCF88119C931F00538AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E /* pianobar */;
+			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
 			remoteInfo = pianobar;
 		};
 		820CCF8A119C931F00538AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 821DAF78119C636000078BBF /* PianoBar.framework */;
+			remoteGlobalIDString = 821DAF78119C636000078BBF;
 			remoteInfo = PianoBarFramework;
 		};
 		820CCFA9119C93C200538AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 821DAF77119C636000078BBF /* PianoBarFramework */;
+			remoteGlobalIDString = 821DAF77119C636000078BBF;
 			remoteInfo = PianoBarFramework;
 		};
 /* End PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				820CD00D119C953300538AF0 /* PianoBar.framework in Copy Frameworks */,
 				1E774D5511288D3E00DC4EC7 /* VillainousStyle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
