@@ -84,13 +84,6 @@
 			remoteGlobalIDString = 1E105729119A6A33008CC292;
 			remoteInfo = libpiano;
 		};
-		820CCF88119C931F00538AF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
-			remoteInfo = pianobar;
-		};
 		820CCF8A119C931F00538AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
@@ -105,11 +98,25 @@
 			remoteGlobalIDString = 821DAF77119C636000078BBF;
 			remoteInfo = PianoBarFramework;
 		};
-		82ED3140119CF7F500861CAB /* PBXContainerItemProxy */ = {
+		82305A31119DB30900317630 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
+			remoteGlobalIDString = 82305917119DB11700317630;
+			remoteInfo = PianoBar;
+		};
+		82305A7A119DB36200317630 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E /* pianobar */;
+			remoteInfo = pianobar;
+		};
+		82305A7C119DB36200317630 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E /* pianobar */;
 			remoteInfo = pianobar;
 		};
 /* End PBXContainerItemProxy section */
@@ -324,12 +331,13 @@
 		820CCF7B119C931F00538AF0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				820CCF89119C931F00538AF0 /* pianobar */,
+				82305A7B119DB36200317630 /* pianobar */,
 				820CCF83119C931F00538AF0 /* libezxml.a */,
 				820CCF85119C931F00538AF0 /* libwaitress.a */,
 				820CCF87119C931F00538AF0 /* libpiano.a */,
-				82ED3141119CF7F500861CAB /* pianobar */,
+				82305A7D119DB36200317630 /* pianobar */,
 				820CCF8B119C931F00538AF0 /* PianoBar.framework */,
+				82305A32119DB30900317630 /* libPianoBar.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,13 +436,6 @@
 			remoteRef = 820CCF86119C931F00538AF0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		820CCF89119C931F00538AF0 /* pianobar */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = pianobar;
-			remoteRef = 820CCF88119C931F00538AF0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		820CCF8B119C931F00538AF0 /* PianoBar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -442,11 +443,25 @@
 			remoteRef = 820CCF8A119C931F00538AF0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		82ED3141119CF7F500861CAB /* pianobar */ = {
+		82305A32119DB30900317630 /* libPianoBar.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPianoBar.a;
+			remoteRef = 82305A31119DB30900317630 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82305A7B119DB36200317630 /* pianobar */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = pianobar;
-			remoteRef = 82ED3140119CF7F500861CAB /* PBXContainerItemProxy */;
+			remoteRef = 82305A7A119DB36200317630 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82305A7D119DB36200317630 /* pianobar */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = pianobar;
+			remoteRef = 82305A7C119DB36200317630 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -564,6 +579,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/Debug/Mac\"",
 					"\"$(SRCROOT)/contrib\"",
+					"\"$(SRCROOT)/contrib/pianobar/build/Debug\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
