@@ -7,6 +7,8 @@ config.*
 *.libs*
 Makefile
 .DS_Store
+*.mode1v3
+*.pbxuser
 
 # libfaad2
 faad
