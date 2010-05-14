@@ -14,6 +14,7 @@
 #import "NSWindow+TitlebarAccessory.h"
 #import "PPTimeIntervalTransformer.h"
 #import <PianoBar/PPStation.h>
+#import <PianoBar/PPTrack.h>
 
 @implementation PlayerPianoAppDelegate
 
@@ -38,6 +39,7 @@
 	
 	[self willChangeValueForKey:@"pianobar"];
 	pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail andPassword:pandoraPassword];
+    [pianobar setDelegate:self];
 	[pianobar login];
     [pianobar loadStations];
 	[self  didChangeValueForKey:@"pianobar"];
@@ -105,6 +107,27 @@
 		[self playNextSong:sender];
 	}
 }
+
+-(void)pianobarWillLogin:(PPPianobarController *)pianobar;
+{
+    NSLog(@"Will log in");
+}
+
+-(void)pianobarDidLogin:(PPPianobarController *)pianobar;
+{
+    NSLog(@"Logged in");
+}
+
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(PPTrack *)song;
+{
+    NSLog(@"Playing song: %@", song);
+}
+
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingChannel:(PPStation *)channel;
+{
+    NSLog(@"Playing station: %@", channel);
+}
+
 
 -(IBAction)quit:(id)sender{
 	[pianobar stop];

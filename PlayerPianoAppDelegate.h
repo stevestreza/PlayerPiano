@@ -13,7 +13,7 @@
 #import <PianoBar/PPPianobarController.h>
 #import "PPStyleView.h"
 
-@interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate> {
+@interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate, PPPianobarDelegate> {
     NSWindow *window;
 	
 	PPPianobarController *pianobar;
