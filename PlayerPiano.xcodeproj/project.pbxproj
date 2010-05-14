@@ -105,6 +105,13 @@
 			remoteGlobalIDString = 821DAF77119C636000078BBF;
 			remoteInfo = PianoBarFramework;
 		};
+		82ED3140119CF7F500861CAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EF23B4A112745F100D04DD7 /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
+			remoteInfo = pianobar;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -317,10 +324,11 @@
 		820CCF7B119C931F00538AF0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				820CCF89119C931F00538AF0 /* pianobar */,
 				820CCF83119C931F00538AF0 /* libezxml.a */,
 				820CCF85119C931F00538AF0 /* libwaitress.a */,
 				820CCF87119C931F00538AF0 /* libpiano.a */,
-				820CCF89119C931F00538AF0 /* pianobar */,
+				82ED3141119CF7F500861CAB /* pianobar */,
 				820CCF8B119C931F00538AF0 /* PianoBar.framework */,
 			);
 			name = Products;
@@ -434,6 +442,13 @@
 			remoteRef = 820CCF8A119C931F00538AF0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		82ED3141119CF7F500861CAB /* pianobar */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = pianobar;
+			remoteRef = 82ED3140119CF7F500861CAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -526,6 +541,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/Debug/Mac\"",
 					"\"$(SRCROOT)/contrib/pianobar/build/Debug\"",
+					"\"$(SRCROOT)/contrib\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -547,6 +563,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/Debug/Mac\"",
+					"\"$(SRCROOT)/contrib\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

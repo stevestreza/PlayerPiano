@@ -2,18 +2,18 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10C540</string>
-		<string key="IBDocument.InterfaceBuilderVersion">732</string>
-		<string key="IBDocument.AppKitVersion">1038.25</string>
-		<string key="IBDocument.HIToolboxVersion">458.00</string>
+		<string key="IBDocument.SystemVersion">10D573</string>
+		<string key="IBDocument.InterfaceBuilderVersion">762</string>
+		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.HIToolboxVersion">460.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">732</string>
+			<string key="NS.object.0">762</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="622"/>
 			<integer value="57"/>
+			<integer value="622"/>
 			<integer value="605"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -1630,8 +1630,9 @@
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>name</string>
+					<string>stationID</string>
 				</object>
-				<string key="NSObjectClassName">NSDictionary</string>
+				<string key="NSObjectClassName">PPStation</string>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
@@ -1643,13 +1644,14 @@
 			<object class="NSObjectController" id="653585522">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>songTitle</string>
-					<string>songArtist</string>
-					<string>songAlbum</string>
-					<string>timeTotal</string>
+					<string>title</string>
+					<string>artist</string>
+					<string>album</string>
+					<string>duration</string>
 					<string>timeLeft</string>
-					<string>timeSoFar</string>
+					<string>currentTime</string>
 				</object>
+				<string key="NSObjectClassName">PPTrack</string>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
 			</object>
 		</object>
@@ -2499,39 +2501,6 @@
 					<int key="connectionID">634</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">maxValue: selection.timeTotal</string>
-						<reference key="source" ref="66568129"/>
-						<reference key="destination" ref="653585522"/>
-						<object class="NSNibBindingConnector" key="connector" id="240013307">
-							<reference key="NSSource" ref="66568129"/>
-							<reference key="NSDestination" ref="653585522"/>
-							<string key="NSLabel">maxValue: selection.timeTotal</string>
-							<string key="NSBinding">maxValue</string>
-							<string key="NSKeyPath">selection.timeTotal</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">639</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.timeSoFar</string>
-						<reference key="source" ref="66568129"/>
-						<reference key="destination" ref="653585522"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="66568129"/>
-							<reference key="NSDestination" ref="653585522"/>
-							<string key="NSLabel">value: selection.timeSoFar</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.timeSoFar</string>
-							<reference key="NSPreviousConnector" ref="240013307"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">640</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">progressBarContainer</string>
 						<reference key="source" ref="976324537"/>
@@ -2546,26 +2515,6 @@
 						<reference key="destination" ref="915089044"/>
 					</object>
 					<int key="connectionID">642</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.timeSoFar</string>
-						<reference key="source" ref="646071299"/>
-						<reference key="destination" ref="653585522"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="646071299"/>
-							<reference key="NSDestination" ref="653585522"/>
-							<string key="NSLabel">value: selection.timeSoFar</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.timeSoFar</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">PPTimeIntervalTransformer</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">653</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2595,6 +2544,59 @@
 						</object>
 					</object>
 					<int key="connectionID">657</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.currentTime</string>
+						<reference key="source" ref="646071299"/>
+						<reference key="destination" ref="653585522"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="646071299"/>
+							<reference key="NSDestination" ref="653585522"/>
+							<string key="NSLabel">value: selection.currentTime</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.currentTime</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">PPTimeIntervalTransformer</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">658</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">maxValue: selection.duration</string>
+						<reference key="source" ref="66568129"/>
+						<reference key="destination" ref="653585522"/>
+						<object class="NSNibBindingConnector" key="connector" id="372485192">
+							<reference key="NSSource" ref="66568129"/>
+							<reference key="NSDestination" ref="653585522"/>
+							<string key="NSLabel">maxValue: selection.duration</string>
+							<string key="NSBinding">maxValue</string>
+							<string key="NSKeyPath">selection.duration</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">660</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.currentTime</string>
+						<reference key="source" ref="66568129"/>
+						<reference key="destination" ref="653585522"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="66568129"/>
+							<reference key="NSDestination" ref="653585522"/>
+							<string key="NSLabel">value: selection.currentTime</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.currentTime</string>
+							<reference key="NSPreviousConnector" ref="372485192"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">661</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4211,7 +4213,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{380, 836}, {448, 20}}</string>
+					<string>{{380, 736}, {448, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{74, 862}</string>
@@ -4320,16 +4322,16 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{392, 653}, {213, 183}}</string>
+					<string>{{392, 553}, {213, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{23, 794}, {245, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{0, 699}, {320, 146}}</string>
+					<string>{{40, 610}, {320, 146}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{0, 699}, {320, 146}}</string>
+					<string>{{40, 610}, {320, 146}}</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4341,7 +4343,7 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{21, 800}, {127, 22}}</string>
+					<string>{{40, 734}, {127, 22}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>PPTitlebarAccessoryPopUpButton</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4403,7 +4405,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">657</int>
+			<int key="maxID">661</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5115,6 +5117,7 @@
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1060" key="NS.object.0"/>
@@ -5126,5 +5129,26 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">../../PlayerPiano.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>NSMenuCheckmark</string>
+				<string>NSMenuMixedState</string>
+				<string>next-song</string>
+				<string>pause</string>
+				<string>thumb-down</string>
+				<string>thumb-up</string>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{9, 8}</string>
+				<string>{7, 2}</string>
+				<string>{13, 8}</string>
+				<string>{7, 10}</string>
+				<string>{8, 10}</string>
+				<string>{8, 10}</string>
+			</object>
+		</object>
 	</data>
 </archive>

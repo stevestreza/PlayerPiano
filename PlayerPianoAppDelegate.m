@@ -13,6 +13,7 @@
 #import "PPStyleSheet.h"
 #import "NSWindow+TitlebarAccessory.h"
 #import "PPTimeIntervalTransformer.h"
+#import <PianoBar/PPStation.h>
 
 @implementation PlayerPianoAppDelegate
 
@@ -50,10 +51,9 @@
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (context == @"stationController.selection") {
-		NSDictionary *selectedStation = [pianobar selectedStation];
-		NSNumber *stationID = [selectedStation objectForKey:@"id"];
+		PPStation *selectedStation = [pianobar selectedStation];
 		
-		[pianobar playStationWithID:[stationID stringValue]];
+		[pianobar playStationWithID:[[selectedStation stationID] stringValue]];
 	}else if(context == @"stationController.isPlaying"){
 		[playPauseNextSegmentedControl setImage:[NSImage imageNamed:([pianobar isPlaying] ? @"pause" : @"play")]
 									 forSegment:0];
