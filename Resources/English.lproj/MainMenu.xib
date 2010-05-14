@@ -12,9 +12,9 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="605"/>
 			<integer value="57"/>
 			<integer value="622"/>
-			<integer value="605"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1448,17 +1448,10 @@
 								<int key="NSSegmentStyle">2</int>
 							</object>
 						</object>
-						<object class="NSCustomView" id="670318620">
-							<reference key="NSNextResponder" ref="62676803"/>
-							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{89, 8}, {142, 26}}</string>
-							<reference key="NSSuperview" ref="62676803"/>
-							<string key="NSClassName">NSView</string>
-						</object>
 						<object class="NSSlider" id="66568129">
 							<reference key="NSNextResponder" ref="62676803"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{129, 16}, {63.281, 15}}</string>
+							<string key="NSFrame">{{126, 14}, {63.281, 15}}</string>
 							<reference key="NSSuperview" ref="62676803"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSliderCell" key="NSCell" id="107315886">
@@ -1479,12 +1472,12 @@
 						<object class="NSTextField" id="646071299">
 							<reference key="NSNextResponder" ref="62676803"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{93, 17}, {33, 13}}</string>
+							<string key="NSFrame">{{90, 15}, {33, 13}}</string>
 							<reference key="NSSuperview" ref="62676803"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="1016287210">
 								<int key="NSCellFlags">68288064</int>
-								<int key="NSCellFlags2">272630784</int>
+								<int key="NSCellFlags2">71304192</int>
 								<string key="NSContents">88:88</string>
 								<object class="NSFont" key="NSSupport" id="24">
 									<string key="NSName">LucidaGrande</string>
@@ -1507,12 +1500,12 @@
 						<object class="NSTextField" id="861646743">
 							<reference key="NSNextResponder" ref="62676803"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{190, 17}, {40, 13}}</string>
+							<string key="NSFrame">{{190, 15}, {40, 13}}</string>
 							<reference key="NSSuperview" ref="62676803"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="129228218">
 								<int key="NSCellFlags">68288064</int>
-								<int key="NSCellFlags2">71304192</int>
+								<int key="NSCellFlags2">4195328</int>
 								<string key="NSContents">-88:88</string>
 								<reference key="NSSupport" ref="24"/>
 								<reference key="NSControlView" ref="861646743"/>
@@ -2598,14 +2591,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">progressBarContainer</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="670318620"/>
-					</object>
-					<int key="connectionID">641</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">playPauseNextSegmentedControl</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="915089044"/>
@@ -2800,6 +2785,22 @@
 						</object>
 					</object>
 					<int key="connectionID">713</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">elapsedField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="646071299"/>
+					</object>
+					<int key="connectionID">714</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">remainingField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="861646743"/>
+					</object>
+					<int key="connectionID">715</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3863,14 +3864,13 @@
 							<reference ref="11068522"/>
 							<reference ref="915089044"/>
 							<reference ref="1016792365"/>
-							<reference ref="670318620"/>
-							<reference ref="646071299"/>
-							<reference ref="66568129"/>
-							<reference ref="861646743"/>
 							<reference ref="988555464"/>
 							<reference ref="224385402"/>
 							<reference ref="624865290"/>
 							<reference ref="119641588"/>
+							<reference ref="66568129"/>
+							<reference ref="646071299"/>
+							<reference ref="861646743"/>
 						</object>
 						<reference key="parent" ref="629598273"/>
 					</object>
@@ -3963,14 +3963,6 @@
 						<int key="objectID">628</int>
 						<reference key="object" ref="1007854946"/>
 						<reference key="parent" ref="507026489"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">635</int>
-						<reference key="object" ref="670318620"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-						</object>
-						<reference key="parent" ref="62676803"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">647</int>
@@ -4321,7 +4313,6 @@
 					<string>626.IBPluginDependency</string>
 					<string>627.IBPluginDependency</string>
 					<string>628.IBPluginDependency</string>
-					<string>635.IBPluginDependency</string>
 					<string>636.IBPluginDependency</string>
 					<string>637.CustomClassName</string>
 					<string>637.IBPluginDependency</string>
@@ -4585,9 +4576,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{61, 528}, {320, 146}}</string>
+					<string>{{141, 265}, {320, 146}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{61, 528}, {320, 146}}</string>
+					<string>{{141, 265}, {320, 146}}</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4606,7 +4597,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{20, 767}, {107, 54}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4669,7 +4659,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">713</int>
+			<int key="maxID">715</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4754,9 +4744,10 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>backgroundContainer</string>
+							<string>elapsedField</string>
 							<string>iTunesButton</string>
 							<string>playPauseNextSegmentedControl</string>
-							<string>progressBarContainer</string>
+							<string>remainingField</string>
 							<string>stationController</string>
 							<string>titleField</string>
 							<string>titlebarAccessory</string>
@@ -4765,9 +4756,10 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>PPStyleView</string>
+							<string>NSTextField</string>
 							<string>NSButton</string>
 							<string>NSSegmentedControl</string>
-							<string>NSView</string>
+							<string>NSTextField</string>
 							<string>NSArrayController</string>
 							<string>PPGrowingTextField</string>
 							<string>NSView</string>

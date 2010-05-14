@@ -26,13 +26,11 @@
 	backgroundContainer.styleName = @"backgroundStyle";
 	[backgroundContainer setNeedsDisplay];
 	
-	progressBar = [[PPStyleView alloc] initWithFrame:progressBarContainer.bounds];
-	[progressBarContainer addSubview:progressBar];
-	progressBar.styleName = @"progressBarStyle";
-	[progressBar setNeedsDisplay];
-	
 	titleField.maxWidth = [titleField frame].size.width;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleFrameDidChange:) name:NSViewFrameDidChangeNotification object:titleField];
+	
+	[[elapsedField cell] setBackgroundStyle:NSBackgroundStyleRaised];
+	[[remainingField cell] setBackgroundStyle:NSBackgroundStyleRaised];
 	
 	NSString *pandoraEmail = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraEmail"];
 	NSString *pandoraPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraPassword"];

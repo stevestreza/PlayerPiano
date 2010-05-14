@@ -24,13 +24,14 @@
 	IBOutlet NSSegmentedControl *playPauseNextSegmentedControl;
 
 	IBOutlet PPStyleView *backgroundContainer;
-	IBOutlet NSView *progressBarContainer;
-	PPStyleView *progressBar;
 	
 	IBOutlet PPGrowingTextField *titleField;
 	IBOutlet NSButton *iTunesButton;
 	
 	IBOutlet NSView *titlebarAccessory;
+	
+	IBOutlet NSTextField *elapsedField;
+	IBOutlet NSTextField *remainingField;
 }
 
 @property (assign) IBOutlet NSWindow *window;
