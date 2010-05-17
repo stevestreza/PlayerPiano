@@ -15,12 +15,15 @@
 #import "PPTimeIntervalTransformer.h"
 #import <PianoBar/PPStation.h>
 #import <PianoBar/PPTrack.h>
+#import <Growl/Growl.h>
 
 @implementation PlayerPianoAppDelegate
 
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [GrowlApplicationBridge setGrowlDelegate:self];
+    
 	[PPStyleSheet class];
 	[PPTimeIntervalTransformer class];
 	
@@ -120,6 +123,13 @@
 
 -(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(PPTrack *)song;
 {
+    [GrowlApplicationBridge notifyWithTitle:[song title]
+                                description:[song artist]
+                           notificationName:@"PlaySong"
+                                   iconData:nil
+                                   priority:0
+                                   isSticky:NO
+                               clickContext:nil];
     NSLog(@"Playing song: %@", song);
 }
 
