@@ -40,7 +40,7 @@
 	
 	NSArray *stations;
 
-	NSDictionary *selectedStation;
+	PPStation *selectedStation;
 	NSDictionary *nowPlaying;
 	
 	BOOL paused;
@@ -51,7 +51,7 @@
 	id<PPPianobarDelegate> delegate;
 }
 
-@property (nonatomic, retain) NSDictionary *selectedStation;
+@property (nonatomic, retain) PPStation *selectedStation;
 @property (nonatomic, retain) NSDictionary *nowPlaying;
 
 @property (nonatomic, retain) NSArray *stations;

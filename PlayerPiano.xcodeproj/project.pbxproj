@@ -24,7 +24,6 @@
 		1E7D45DF1128FFB4001CA61F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7D45DE1128FFB4001CA61F /* play.png */; };
 		1E7D460D11291746001CA61F /* PPSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D460C11291746001CA61F /* PPSliderCell.m */; };
 		1E7D467711291C80001CA61F /* PPTimeIntervalTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D467611291C80001CA61F /* PPTimeIntervalTransformer.m */; };
-		1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BA2112747A800D04DD7 /* PPPianobarController.m */; };
 		1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */; };
 		1EF23C2E11275A5B00D04DD7 /* PPLineRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C2D11275A5B00D04DD7 /* PPLineRecognizer.m */; };
 		1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C3A11275C6100D04DD7 /* PPLineParser.m */; };
@@ -33,7 +32,10 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C90D01F1119B551E00769A44 /* PPITunesButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D01F0119B551E00769A44 /* PPITunesButtonCell.m */; };
 		C90D021C119B5C0400769A44 /* PPGrowingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D021B119B5C0400769A44 /* PPGrowingTextField.m */; };
-		C9ECB2DE119B2EC90075E08B /* pianobar in Resources */ = {isa = PBXBuildFile; fileRef = C9ECB1F7119AA2340075E08B /* pianobar */; };
+		C930559C11A3C26E0096D345 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C930559B11A3C26E0096D345 /* Growl.framework */; };
+		C93055A111A3C2990096D345 /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C930559B11A3C26E0096D345 /* Growl.framework */; };
+		C9371DDB11A37372001CF691 /* PianoBar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C9371DCA11A37242001CF691 /* PianoBar.framework */; };
+		C9371DE311A373D6001CF691 /* PianoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9371DE211A373D6001CF691 /* PianoBar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,18 +67,25 @@
 			remoteGlobalIDString = 1E0FDD5A101A79DF007AFA92;
 			remoteInfo = VillainousStyle.framework;
 		};
+		C9371DC911A37242001CF691 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C9371CC211A35A7B001CF691;
+			remoteInfo = PianoBarFramework;
+		};
+		C9371DD911A37360001CF691 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C9371CC111A35A7B001CF691;
+			remoteInfo = PianoBarFramework;
+		};
 		C9ECB1F6119AA2340075E08B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C90B19CE119A960A001AD6DF;
-			remoteInfo = pianobar;
-		};
-		C9ECB1F9119AA2400075E08B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C90B19CD119A960A001AD6DF;
 			remoteInfo = pianobar;
 		};
 /* End PBXContainerItemProxy section */
@@ -89,6 +98,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1E774D5511288D3E00DC4EC7 /* VillainousStyle.framework in Copy Frameworks */,
+				C93055A111A3C2990096D345 /* Growl.framework in Copy Frameworks */,
+				C9371DDB11A37372001CF691 /* PianoBar.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +152,8 @@
 		C90D01F0119B551E00769A44 /* PPITunesButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPITunesButtonCell.m; sourceTree = "<group>"; };
 		C90D021A119B5C0400769A44 /* PPGrowingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPGrowingTextField.h; sourceTree = "<group>"; };
 		C90D021B119B5C0400769A44 /* PPGrowingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPGrowingTextField.m; sourceTree = "<group>"; };
+		C930559B11A3C26E0096D345 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = contrib/Growl.framework; sourceTree = "<group>"; };
+		C9371DE211A373D6001CF691 /* PianoBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PianoBar.framework; path = contrib/pianobar/build/Release/PianoBar.framework; sourceTree = "<group>"; };
 		C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pianobar.xcodeproj; path = contrib/pianobar/pianobar.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +165,8 @@
 				1E774D5611288D4100DC4EC7 /* VillainousStyle.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				1E774D6811288DFA00DC4EC7 /* VillainousStyle.framework in Frameworks */,
+				C9371DE311A373D6001CF691 /* PianoBar.framework in Frameworks */,
+				C930559C11A3C26E0096D345 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +301,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9371DE211A373D6001CF691 /* PianoBar.framework */,
 				1E774D6711288DFA00DC4EC7 /* VillainousStyle.framework */,
+				C930559B11A3C26E0096D345 /* Growl.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -297,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				C9ECB1F7119AA2340075E08B /* pianobar */,
+				C9371DCA11A37242001CF691 /* PianoBar.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,7 +335,7 @@
 			);
 			dependencies = (
 				1E774D5311288D2100DC4EC7 /* PBXTargetDependency */,
-				C9ECB1FA119AA2400075E08B /* PBXTargetDependency */,
+				C9371DDA11A37360001CF691 /* PBXTargetDependency */,
 			);
 			name = PlayerPiano;
 			productInstallPath = "$(HOME)/Applications";
@@ -374,6 +392,13 @@
 			remoteRef = 1E774D5011288D0700DC4EC7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		C9371DCA11A37242001CF691 /* PianoBar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PianoBar.framework;
+			remoteRef = C9371DC911A37242001CF691 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		C9ECB1F7119AA2340075E08B /* pianobar */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -395,7 +420,6 @@
 				1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */,
 				1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */,
 				1E7D45DF1128FFB4001CA61F /* play.png in Resources */,
-				C9ECB2DE119B2EC90075E08B /* pianobar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +432,6 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */,
-				1EF23BA3112747A800D04DD7 /* PPPianobarController.m in Sources */,
 				1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */,
 				1EF23C2E11275A5B00D04DD7 /* PPLineRecognizer.m in Sources */,
 				1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */,
@@ -432,10 +455,10 @@
 			name = VillainousStyle.framework;
 			targetProxy = 1E774D5211288D2100DC4EC7 /* PBXContainerItemProxy */;
 		};
-		C9ECB1FA119AA2400075E08B /* PBXTargetDependency */ = {
+		C9371DDA11A37360001CF691 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = pianobar;
-			targetProxy = C9ECB1F9119AA2400075E08B /* PBXContainerItemProxy */;
+			name = PianoBarFramework;
+			targetProxy = C9371DD911A37360001CF691 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -475,6 +498,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/$(CONFIGURATION)/Mac\"",
+					"\"$(SRCROOT)/contrib/pianobar/build/$(CONFIGURATION)\"",
+					"\"$(SRCROOT)/contrib\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -484,7 +509,9 @@
 				GCC_PREFIX_HEADER = PlayerPiano_Prefix.pch;
 				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "($SRCROOT)/contrib/pianobar/build/($CONFIGURATION)";
 				PRODUCT_NAME = PlayerPiano;
+				VALID_ARCHS = i386;
 			};
 			name = Debug;
 		};
@@ -496,13 +523,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/contrib/VillainousStyle/Source/build/$(CONFIGURATION)/Mac\"",
+					"\"$(SRCROOT)/contrib/pianobar/build/$(CONFIGURATION)\"",
+					"\"$(SRCROOT)/contrib\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PlayerPiano_Prefix.pch;
 				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "($SRCROOT)/contrib/pianobar/build/($CONFIGURATION)";
 				PRODUCT_NAME = PlayerPiano;
+				VALID_ARCHS = i386;
 			};
 			name = Release;
 		};

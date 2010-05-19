@@ -14,12 +14,17 @@
 #import "NSWindow+TitlebarAccessory.h"
 #import "PPTimeIntervalTransformer.h"
 #import "PPGrowingTextField.h"
+#import <PianoBar/PPStation.h>
+#import <PianoBar/PPTrack.h>
+#import <Growl/Growl.h>
 
 @implementation PlayerPianoAppDelegate
 
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [GrowlApplicationBridge setGrowlDelegate:self];
+    
 	[PPStyleSheet class];
 	[PPTimeIntervalTransformer class];
 	
@@ -36,8 +41,10 @@
 	NSString *pandoraPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraPassword"];
 	
 	[self willChangeValueForKey:@"pianobar"];
-	pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail password:pandoraPassword];
-	[pianobar start];
+	pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail andPassword:pandoraPassword];
+    [pianobar setDelegate:self];
+	[pianobar login];
+    [pianobar loadStations];
 	[self  didChangeValueForKey:@"pianobar"];
 	
 	[pianobar addObserver:self forKeyPath:@"selectedStation" options:0 context:@"stationController.selection"];
@@ -49,10 +56,9 @@
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (context == @"stationController.selection") {
-		NSDictionary *selectedStation = [pianobar selectedStation];
-		NSNumber *stationID = [selectedStation objectForKey:@"id"];
+		PPStation *selectedStation = [pianobar selectedStation];
 		
-		[pianobar playStationWithID:[stationID stringValue]];
+		[pianobar playStationWithID:[[selectedStation stationID] stringValue]];
 	}else if(context == @"stationController.isPlaying"){
 		[playPauseNextSegmentedControl setImage:[NSImage imageNamed:([pianobar isPlaying] ? @"pause" : @"play")]
 									 forSegment:0];
@@ -111,6 +117,34 @@
 		[self playNextSong:sender];
 	}
 }
+
+-(void)pianobarWillLogin:(PPPianobarController *)pianobar;
+{
+    NSLog(@"Will log in");
+}
+
+-(void)pianobarDidLogin:(PPPianobarController *)pianobar;
+{
+    NSLog(@"Logged in");
+}
+
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(PPTrack *)song;
+{
+    [GrowlApplicationBridge notifyWithTitle:[song title]
+                                description:[song artist]
+                           notificationName:@"PlaySong"
+                                   iconData:nil
+                                   priority:0
+                                   isSticky:NO
+                               clickContext:nil];
+    NSLog(@"Playing song: %@", song);
+}
+
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingChannel:(PPStation *)channel;
+{
+    NSLog(@"Playing station: %@", channel);
+}
+
 
 -(IBAction)openInStore:(id)sender{
 	[pianobar openInStore:self];
