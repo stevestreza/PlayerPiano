@@ -170,8 +170,6 @@
 		1E7D460C11291746001CA61F /* PPSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSliderCell.m; sourceTree = "<group>"; };
 		1E7D467511291C80001CA61F /* PPTimeIntervalTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTimeIntervalTransformer.h; sourceTree = "<group>"; };
 		1E7D467611291C80001CA61F /* PPTimeIntervalTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTimeIntervalTransformer.m; sourceTree = "<group>"; };
-		1EF23BA1112747A800D04DD7 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPianobarController.h; sourceTree = "<group>"; };
-		1EF23BA2112747A800D04DD7 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
 		1EF23BC811274AFA00D04DD7 /* PPFileHandleLineBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFileHandleLineBuffer.h; sourceTree = "<group>"; };
 		1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFileHandleLineBuffer.m; sourceTree = "<group>"; };
 		1EF23C2C11275A5B00D04DD7 /* PPLineRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLineRecognizer.h; sourceTree = "<group>"; };
@@ -223,8 +221,6 @@
 				1EF23C2F11275BBE00D04DD7 /* Line Reading */,
 				256AC3D80F4B6AC300CF3369 /* PlayerPianoAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */,
-				1EF23BA1112747A800D04DD7 /* PPPianobarController.h */,
-				1EF23BA2112747A800D04DD7 /* PPPianobarController.m */,
 				1E774D5C11288DA600DC4EC7 /* PPStyleSheet.h */,
 				1E774D5D11288DA600DC4EC7 /* PPStyleSheet.m */,
 				1E774DAB11288F2500DC4EC7 /* PPStyleView.h */,
