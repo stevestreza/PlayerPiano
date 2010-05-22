@@ -43,8 +43,12 @@
 	[self willChangeValueForKey:@"pianobar"];
 	pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail andPassword:pandoraPassword];
     [pianobar setDelegate:self];
-	[pianobar login];
-    [pianobar loadStations];
+	if([pianobar login]){
+		[pianobar loadStations];
+	}else{
+		[pianobar release];
+		pianobar = nil;
+	}
 	[self  didChangeValueForKey:@"pianobar"];
 	
 	[pianobar addObserver:self forKeyPath:@"selectedStation" options:0 context:@"stationController.selection"];
