@@ -12,6 +12,12 @@
 #import "PPPianobarController.h"
 #import "NSString+TimeParsing.h"
 
+@interface PPPianobarController ()
+- (void)writeStringToPianobar:(NSString *)string;
+-(NSURL *)iTunesLink;
+-(NSURL *)amazonLink;
+@end
+
 @implementation PPPianobarController
 
 @synthesize delegate, stations, selectedStation, nowPlaying, paused;
@@ -185,10 +191,8 @@
 
 -(void)setNowPlaying:(NSDictionary *)aDict{
 	[self willChangeValueForKey:@"nowPlaying"];
-	[self willChangeValueForKey:@"nowPlayingAttributedDescription"];
 	[nowPlaying autorelease];
 	nowPlaying = [aDict copy];
-	[self didChangeValueForKey:@"nowPlayingAttributedDescription"];
 	[self didChangeValueForKey:@"nowPlaying"];
 }
 
@@ -289,44 +293,29 @@
 	pianobarTask = nil;
 }
 
--(NSAttributedString *)nowPlayingAttributedDescription{
-	NSMutableAttributedString *description = [[[NSMutableAttributedString alloc] initWithString:@""] autorelease];
-	NSDictionary *playing = self.nowPlaying;
-	if(playing){
-		NSFont *titleFont = [[NSFontManager sharedFontManager] convertFont: [NSFont fontWithName:@"Helvetica" size:18.0]
-															   toHaveTrait:NSBoldFontMask];
-		NSFont *restFont = [NSFont fontWithName:@"Helvetica Neue Light" size:16.0];
-		
-		NSColor *titleColor = [NSColor colorWithCalibratedWhite:0.8 alpha:1.0];
-		NSColor *restColor  = [NSColor colorWithCalibratedWhite:0.6 alpha:1.0];
-		
-		NSAttributedString *newline = [[[NSAttributedString alloc] initWithString:@"\n"] autorelease];
-		
-		NSAttributedString *title = [[[NSAttributedString alloc] initWithString:[playing objectForKey:@"songTitle"]
-																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																				 titleFont, NSFontAttributeName,
-																				 titleColor, NSForegroundColorAttributeName,
-																				 nil]] autorelease];
-		NSAttributedString *artist = [[[NSAttributedString alloc] initWithString:[@"by " stringByAppendingString:[playing objectForKey:@"songArtist"]]
-																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																				 restFont, NSFontAttributeName,
-																				 restColor, NSForegroundColorAttributeName,
-																				 nil]] autorelease];
-		NSAttributedString *album = [[[NSAttributedString alloc] initWithString:[@"on " stringByAppendingString:[playing objectForKey:@"songAlbum"]]
-																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																				 restFont, NSFontAttributeName,
-																				 restColor, NSForegroundColorAttributeName,
-																				 nil]] autorelease];
-		[description appendAttributedString:title];
-		[description appendAttributedString:newline];
-		[description appendAttributedString:artist];
-		[description appendAttributedString:newline];
-		[description appendAttributedString:album];
+-(IBAction)openInStore:(id)sender
+{
+	NSURL *link;
+	if ([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask) {
+		link = [self amazonLink];
+	} else {
+		link = [self iTunesLink];
 	}
-	
-//	NSLog(@"Now playing attributed description! %@ -> %@",description, attributedDescription);
-	
-	return [[description copy] autorelease];
+
+	[[NSWorkspace sharedWorkspace] openURL:link];
+}
+
+-(NSURL *)iTunesLink
+{
+	NSString *link = [[[NSString stringWithFormat:@"itms://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=%@&artistTerm=%@", [[self nowPlaying] objectForKey:@"songTitle"], [[self nowPlaying] objectForKey:@"songArtist"]] copy] autorelease];
+	return [NSURL URLWithString:[link stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+}
+
+-(NSURL *)amazonLink
+{
+	NSString *searchTerm = [NSString stringWithFormat:@"%@ %@", [[self nowPlaying] objectForKey:@"songTitle"], [[self nowPlaying] objectForKey:@"songArtist"]];
+	searchTerm = [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+	return [[[NSURL URLWithString:[NSString stringWithFormat:@"http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias=digital-music&field-keywords=%@", searchTerm]] copy] autorelease];
 }
 
 @end
