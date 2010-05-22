@@ -11,6 +11,10 @@
 
 #import "PPFileHandleLineBuffer.h"
 
+// Private
+@interface PPFileHandleLineBuffer ()
+-(void)_sendLine:(NSString *)line;
+@end
 
 @implementation PPFileHandleLineBuffer
 

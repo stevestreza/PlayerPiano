@@ -73,7 +73,7 @@
 	return pianobar;
 }
 
--(void)applicationWillTerminate:(NSApplication *)app{
+-(void)applicationWillTerminate:(NSNotification *)app{
 	[pianobar release];
 	pianobar = nil;
 }

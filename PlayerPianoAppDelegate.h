@@ -11,11 +11,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import <PianoBar/PPPianobarController.h>
+#import <Growl/Growl.h>
 #import "PPStyleView.h"
 
 @class PPGrowingTextField;
 
-@interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate, PPPianobarDelegate> {
+@interface PlayerPianoAppDelegate : NSObject <NSApplicationDelegate, PPPianobarDelegate, GrowlApplicationBridgeDelegate> {
     NSWindow *window;
 	
 	PPPianobarController *pianobar;
