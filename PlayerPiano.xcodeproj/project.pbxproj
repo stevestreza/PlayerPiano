@@ -36,6 +36,9 @@
 		C93055A111A3C2990096D345 /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C930559B11A3C26E0096D345 /* Growl.framework */; };
 		C9371DDB11A37372001CF691 /* PianoBar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C9371DCA11A37242001CF691 /* PianoBar.framework */; };
 		C9371DE311A373D6001CF691 /* PianoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9371DE211A373D6001CF691 /* PianoBar.framework */; };
+		C9B60EB211A7BC3E00A28F37 /* MBPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B60EB111A7BC3E00A28F37 /* MBPreferencesController.m */; };
+		C9B60EC011A7BD2600A28F37 /* PPAccountPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B60EBF11A7BD2600A28F37 /* PPAccountPreferencesViewController.m */; };
+		C9B60EE111A7BF0A00A28F37 /* AccountPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B60EE011A7BF0A00A28F37 /* AccountPreferences.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,11 @@
 		C90D021B119B5C0400769A44 /* PPGrowingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPGrowingTextField.m; sourceTree = "<group>"; };
 		C930559B11A3C26E0096D345 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = contrib/Growl.framework; sourceTree = "<group>"; };
 		C9371DE211A373D6001CF691 /* PianoBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PianoBar.framework; path = contrib/pianobar/build/Release/PianoBar.framework; sourceTree = "<group>"; };
+		C9B60EB011A7BC3E00A28F37 /* MBPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPreferencesController.h; sourceTree = "<group>"; };
+		C9B60EB111A7BC3E00A28F37 /* MBPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPreferencesController.m; sourceTree = "<group>"; };
+		C9B60EBE11A7BD2600A28F37 /* PPAccountPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAccountPreferencesViewController.h; sourceTree = "<group>"; };
+		C9B60EBF11A7BD2600A28F37 /* PPAccountPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAccountPreferencesViewController.m; sourceTree = "<group>"; };
+		C9B60EE011A7BF0A00A28F37 /* AccountPreferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountPreferences.xib; sourceTree = "<group>"; };
 		C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pianobar.xcodeproj; path = contrib/pianobar/pianobar.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +184,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C9B60EAF11A7BC2C00A28F37 /* Preferences */,
 				1E774F731128E59F00DC4EC7 /* Categories */,
 				1EF23C2F11275BBE00D04DD7 /* Line Reading */,
 				256AC3D80F4B6AC300CF3369 /* PlayerPianoAppDelegate.h */,
@@ -294,6 +303,7 @@
 				1E774CCA1128834E00DC4EC7 /* next-song.png */,
 				1E774CCC1128834E00DC4EC7 /* thumb-down.png */,
 				1E774CCD1128834E00DC4EC7 /* thumb-up.png */,
+				C9B60EE011A7BF0A00A28F37 /* AccountPreferences.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -308,6 +318,17 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9B60EAF11A7BC2C00A28F37 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				C9B60EB011A7BC3E00A28F37 /* MBPreferencesController.h */,
+				C9B60EB111A7BC3E00A28F37 /* MBPreferencesController.m */,
+				C9B60EBE11A7BD2600A28F37 /* PPAccountPreferencesViewController.h */,
+				C9B60EBF11A7BD2600A28F37 /* PPAccountPreferencesViewController.m */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 		C9ECB1DE119AA2330075E08B /* Products */ = {
@@ -420,6 +441,7 @@
 				1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */,
 				1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */,
 				1E7D45DF1128FFB4001CA61F /* play.png in Resources */,
+				C9B60EE111A7BF0A00A28F37 /* AccountPreferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +466,8 @@
 				1E7D467711291C80001CA61F /* PPTimeIntervalTransformer.m in Sources */,
 				C90D01F1119B551E00769A44 /* PPITunesButtonCell.m in Sources */,
 				C90D021C119B5C0400769A44 /* PPGrowingTextField.m in Sources */,
+				C9B60EB211A7BC3E00A28F37 /* MBPreferencesController.m in Sources */,
+				C9B60EC011A7BD2600A28F37 /* PPAccountPreferencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

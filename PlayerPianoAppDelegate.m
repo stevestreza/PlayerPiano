@@ -17,6 +17,8 @@
 #import <PianoBar/PPStation.h>
 #import <PianoBar/PPTrack.h>
 #import <Growl/Growl.h>
+#import "MBPreferencesController.h"
+#import "PPAccountPreferencesViewController.h"
 
 @implementation PlayerPianoAppDelegate
 
@@ -40,17 +42,26 @@
 	NSString *pandoraEmail = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraEmail"];
 	NSString *pandoraPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraPassword"];
 	
-	[self willChangeValueForKey:@"pianobar"];
-	pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail andPassword:pandoraPassword];
-    [pianobar setDelegate:self];
-	[pianobar login];
-    [pianobar loadStations];
-	[self  didChangeValueForKey:@"pianobar"];
+	if (pandoraEmail && pandoraPassword) {
+		[self willChangeValueForKey:@"pianobar"];
+		pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail andPassword:pandoraPassword];
+		[pianobar setDelegate:self];
+		[pianobar login];
+		[pianobar loadStations];
+		[self  didChangeValueForKey:@"pianobar"];
+		[pianobar addObserver:self forKeyPath:@"selectedStation" options:0 context:@"stationController.selection"];
+		[pianobar addObserver:self forKeyPath:@"isPlaying" options:0 context:@"stationController.isPlaying"];
+	}
 	
-	[pianobar addObserver:self forKeyPath:@"selectedStation" options:0 context:@"stationController.selection"];
-	[pianobar addObserver:self forKeyPath:@"isPlaying" options:0 context:@"stationController.isPlaying"];
+	[[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:@"values.pandoraEmail" options:0 context:@"defaults.pandoraEmail"];
+	[[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:@"values.pandoraPassword" options:0 context:@"defaults.pandoraPassword"];
 	
 	[window PP_setTitlebarAccessoryView:titlebarAccessory];
+	
+	// Setup preference panes
+	PPAccountPreferencesViewController *accountsController = [[PPAccountPreferencesViewController alloc] initWithNibName:@"AccountPreferences" bundle:nil];
+	[MBPreferencesController sharedController].modules = [NSArray arrayWithObjects:accountsController, nil];
+	[accountsController release];
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -63,6 +74,30 @@
 		NSLog(@"change: %i", [pianobar isInPlaybackMode]);
 		[playPauseNextSegmentedControl setImage:[NSImage imageNamed:([pianobar isPlaying] ? @"NSPause" : @"play")]
 									 forSegment:0];
+	}else if (context == @"defaults.pandoraEmail" || context == @"defaults.pandoraPassword"){
+		NSString *pandoraEmail = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraEmail"];
+		NSString *pandoraPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"pandoraPassword"];
+		
+		if (pianobar) {
+			[self willChangeValueForKey:@"pianobar"];
+			[pianobar removeObserver:self forKeyPath:@"selectedStation"];
+			[pianobar removeObserver:self forKeyPath:@"isPlaying"];
+			[pianobar stop];
+			[pianobar release];
+			pianobar = nil;
+			[self  didChangeValueForKey:@"pianobar"];
+		}
+		
+		if (pandoraEmail && pandoraPassword) {
+			[self willChangeValueForKey:@"pianobar"];
+			pianobar = [[PPPianobarController alloc] initWithUsername:pandoraEmail andPassword:pandoraPassword];
+			[pianobar setDelegate:self];
+			[pianobar login];
+			[pianobar loadStations];
+			[self  didChangeValueForKey:@"pianobar"];
+			[pianobar addObserver:self forKeyPath:@"selectedStation" options:0 context:@"stationController.selection"];
+			[pianobar addObserver:self forKeyPath:@"isPlaying" options:0 context:@"stationController.isPlaying"];
+		}
 	}else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 	}
@@ -156,6 +191,10 @@
 	[pianobar release];
 	
 	[NSApp terminate:sender];
+}
+
+-(IBAction)showPreferences:(id)sender{
+	[[MBPreferencesController sharedController] showWindow:self];
 }
 
 @end
