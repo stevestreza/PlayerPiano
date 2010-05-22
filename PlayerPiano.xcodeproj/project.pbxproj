@@ -509,7 +509,7 @@
 				GCC_PREFIX_HEADER = PlayerPiano_Prefix.pch;
 				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "($SRCROOT)/contrib/pianobar/build/($CONFIGURATION)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/contrib/pianobar/build/$(CONFIGURATION)";
 				PRODUCT_NAME = PlayerPiano;
 				VALID_ARCHS = i386;
 			};
@@ -531,7 +531,7 @@
 				GCC_PREFIX_HEADER = PlayerPiano_Prefix.pch;
 				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "($SRCROOT)/contrib/pianobar/build/($CONFIGURATION)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/contrib/pianobar/build/$(CONFIGURATION)";
 				PRODUCT_NAME = PlayerPiano;
 				VALID_ARCHS = i386;
 			};

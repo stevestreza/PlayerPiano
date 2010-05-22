@@ -60,7 +60,8 @@
 		
 		[pianobar playStationWithID:[[selectedStation stationID] stringValue]];
 	}else if(context == @"stationController.isPlaying"){
-		[playPauseNextSegmentedControl setImage:[NSImage imageNamed:([pianobar isPlaying] ? @"pause" : @"play")]
+		NSLog(@"change: %i", [pianobar isInPlaybackMode]);
+		[playPauseNextSegmentedControl setImage:[NSImage imageNamed:([pianobar isPlaying] ? @"NSPause" : @"play")]
 									 forSegment:0];
 	}else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
