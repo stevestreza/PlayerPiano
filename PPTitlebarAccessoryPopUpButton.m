@@ -14,9 +14,4 @@
 
 @implementation PPTitlebarAccessoryPopUpButton
 
--(void)drawRect:(NSRect)rect{
-	NSLog(@"Whee drawing pop up - %@", [[self selectedItem] title]);
-	[super drawRect:rect];
-}
-
 @end

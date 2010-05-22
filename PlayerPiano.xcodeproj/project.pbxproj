@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E1B690B11279E7C00F03465 /* NSString+TimeParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */; };
+		1E21248711A86CB400C19E05 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 1E21248611A86CB400C19E05 /* Growl Registration Ticket.growlRegDict */; };
 		1E774CCE1128834E00DC4EC7 /* next-song.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCA1128834E00DC4EC7 /* next-song.png */; };
 		1E774CD01128834E00DC4EC7 /* thumb-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCC1128834E00DC4EC7 /* thumb-down.png */; };
 		1E774CD11128834E00DC4EC7 /* thumb-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E774CCD1128834E00DC4EC7 /* thumb-up.png */; };
@@ -17,7 +18,6 @@
 		1E774D5E11288DA600DC4EC7 /* PPStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774D5D11288DA600DC4EC7 /* PPStyleSheet.m */; };
 		1E774D6811288DFA00DC4EC7 /* VillainousStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E774D6711288DFA00DC4EC7 /* VillainousStyle.framework */; };
 		1E774DAD11288F2500DC4EC7 /* PPStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774DAC11288F2500DC4EC7 /* PPStyleView.m */; };
-		1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E774DF11128950C00DC4EC7 /* MainWindow.xib */; };
 		1E774F701128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774F6F1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m */; };
 		1E774F8B1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E774F8A1128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.m */; };
 		1E7D45DF1128FFB4001CA61F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7D45DE1128FFB4001CA61F /* play.png */; };
@@ -148,6 +148,7 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1E1B690911279E7C00F03465 /* NSString+TimeParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeParsing.h"; sourceTree = "<group>"; };
 		1E1B690A11279E7C00F03465 /* NSString+TimeParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeParsing.m"; sourceTree = "<group>"; };
+		1E21248611A86CB400C19E05 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		1E774CCA1128834E00DC4EC7 /* next-song.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next-song.png"; sourceTree = "<group>"; };
 		1E774CCC1128834E00DC4EC7 /* thumb-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-down.png"; sourceTree = "<group>"; };
 		1E774CCD1128834E00DC4EC7 /* thumb-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-up.png"; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1E21248611A86CB400C19E05 /* Growl Registration Ticket.growlRegDict */,
 				1E7D45DE1128FFB4001CA61F /* play.png */,
 				8D1107310486CEB800E47090 /* PlayerPiano-Info.plist */,
 				1E774CDD112883B700DC4EC7 /* InfoPlist.strings */,
@@ -512,9 +514,9 @@
 				1E774CD11128834E00DC4EC7 /* thumb-up.png in Resources */,
 				1E774CE1112883B700DC4EC7 /* InfoPlist.strings in Resources */,
 				1E774CE2112883B700DC4EC7 /* MainMenu.xib in Resources */,
-				1E774DF31128950C00DC4EC7 /* MainWindow.xib in Resources */,
 				1E7D45DF1128FFB4001CA61F /* play.png in Resources */,
 				C9B60EE111A7BF0A00A28F37 /* AccountPreferences.xib in Resources */,
+				1E21248711A86CB400C19E05 /* Growl Registration Ticket.growlRegDict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
