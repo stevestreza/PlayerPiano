@@ -43,6 +43,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1E4E5C5611A9A8C7008EEAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1E10571B119A6A25008CC292 /* libezxml.a */;
+			remoteInfo = libezxml;
+		};
+		1E4E5C5811A9A8C7008EEAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1E105722119A6A2D008CC292 /* libwaitress.a */;
+			remoteInfo = libwaitress;
+		};
+		1E4E5C5A11A9A8C7008EEAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1E105729119A6A33008CC292 /* libpiano.a */;
+			remoteInfo = libpiano;
+		};
+		1E4E5C5C11A9A8C7008EEAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E /* pianobar */;
+			remoteInfo = pianobar;
+		};
+		1E4E5C5E11A9A8C7008EEAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 82305917119DB11700317630 /* libPianoBar.a */;
+			remoteInfo = PianoBar;
+		};
 		1E774D4C11288D0700DC4EC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E774D4211288D0700DC4EC7 /* VillainousStyle.xcodeproj */;
@@ -82,7 +117,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = C9371CC111A35A7B001CF691;
+			remoteGlobalIDString = 821DAF77119C636000078BBF /* PianoBarFramework */;
 			remoteInfo = PianoBarFramework;
 		};
 		C9ECB1F6119AA2340075E08B /* PBXContainerItemProxy */ = {
@@ -337,7 +372,12 @@
 			isa = PBXGroup;
 			children = (
 				C9ECB1F7119AA2340075E08B /* pianobar */,
+				1E4E5C5711A9A8C7008EEAA8 /* libezxml.a */,
+				1E4E5C5911A9A8C7008EEAA8 /* libwaitress.a */,
+				1E4E5C5B11A9A8C7008EEAA8 /* libpiano.a */,
+				1E4E5C5D11A9A8C7008EEAA8 /* pianobar */,
 				C9371DCA11A37242001CF691 /* PianoBar.framework */,
+				1E4E5C5F11A9A8C7008EEAA8 /* libPianoBar.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,6 +434,41 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		1E4E5C5711A9A8C7008EEAA8 /* libezxml.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libezxml.a;
+			remoteRef = 1E4E5C5611A9A8C7008EEAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1E4E5C5911A9A8C7008EEAA8 /* libwaitress.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libwaitress.a;
+			remoteRef = 1E4E5C5811A9A8C7008EEAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1E4E5C5B11A9A8C7008EEAA8 /* libpiano.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpiano.a;
+			remoteRef = 1E4E5C5A11A9A8C7008EEAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1E4E5C5D11A9A8C7008EEAA8 /* pianobar */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = pianobar;
+			remoteRef = 1E4E5C5C11A9A8C7008EEAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1E4E5C5F11A9A8C7008EEAA8 /* libPianoBar.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPianoBar.a;
+			remoteRef = 1E4E5C5E11A9A8C7008EEAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		1E774D4D11288D0700DC4EC7 /* VillainousStyle.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
