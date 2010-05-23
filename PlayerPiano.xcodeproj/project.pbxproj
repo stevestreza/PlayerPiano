@@ -82,7 +82,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = C9371CC111A35A7B001CF691 /* PianoBarFramework */;
+			remoteGlobalIDString = C9371CC111A35A7B001CF691;
 			remoteInfo = PianoBarFramework;
 		};
 		C9ECB1F6119AA2340075E08B /* PBXContainerItemProxy */ = {
@@ -530,6 +530,7 @@
 				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/contrib/pianobar/build/$(CONFIGURATION)";
+				OTHER_CFLAGS = "-Werror";
 				PRODUCT_NAME = PlayerPiano;
 				VALID_ARCHS = "x86_64 i386";
 			};
@@ -552,6 +553,7 @@
 				INFOPLIST_FILE = "Resources/PlayerPiano-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/contrib/pianobar/build/$(CONFIGURATION)";
+				OTHER_CFLAGS = "-Werror";
 				PRODUCT_NAME = PlayerPiano;
 				VALID_ARCHS = "x86_64 i386";
 			};

@@ -42,7 +42,7 @@
 }
 
 -(void)_awake{
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNeedsDisplay) name:VSStyleSheetChangedNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNeedsDisplay) name:(NSString *)VSStyleSheetChangedNotification object:(id)nil];
 }
 
 -(void)setNeedsDisplay{
@@ -98,7 +98,7 @@
 }
 
 -(void)dealloc{
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:VSStyleSheetChangedNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:(NSString *)VSStyleSheetChangedNotification object:(id)nil];
 	
 	[styleName release], styleName = nil;
 	[styleSheet release], styleSheet = nil;
