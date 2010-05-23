@@ -41,41 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1E21245411A86B4000C19E05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1E10571B119A6A25008CC292 /* libezxml.a */;
-			remoteInfo = libezxml;
-		};
-		1E21245611A86B4000C19E05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1E105722119A6A2D008CC292 /* libwaitress.a */;
-			remoteInfo = libwaitress;
-		};
-		1E21245811A86B4000C19E05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1E105729119A6A33008CC292 /* libpiano.a */;
-			remoteInfo = libpiano;
-		};
-		1E21245A11A86B4000C19E05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E /* pianobar */;
-			remoteInfo = pianobar;
-		};
-		1E21245C11A86B4000C19E05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 82305917119DB11700317630 /* libPianoBar.a */;
-			remoteInfo = PianoBar;
-		};
 		1E774D4C11288D0700DC4EC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E774D4211288D0700DC4EC7 /* VillainousStyle.xcodeproj */;
@@ -115,7 +80,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1DD119AA2330075E08B /* pianobar.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 821DAF77119C636000078BBF /* PianoBarFramework */;
+			remoteGlobalIDString = C9371CC111A35A7B001CF691 /* PianoBarFramework */;
 			remoteInfo = PianoBarFramework;
 		};
 		C9ECB1F6119AA2340075E08B /* PBXContainerItemProxy */ = {
@@ -160,7 +125,6 @@
 		1E774D6711288DFA00DC4EC7 /* VillainousStyle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VillainousStyle.framework; path = contrib/VillainousStyle/Source/build/Debug/Mac/VillainousStyle.framework; sourceTree = "<group>"; };
 		1E774DAB11288F2500DC4EC7 /* PPStyleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStyleView.h; sourceTree = "<group>"; };
 		1E774DAC11288F2500DC4EC7 /* PPStyleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStyleView.m; sourceTree = "<group>"; };
-		1E774DF21128950C00DC4EC7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		1E774F6E1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+TitlebarAccessory.h"; sourceTree = "<group>"; };
 		1E774F6F1128E3F300DC4EC7 /* NSWindow+TitlebarAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+TitlebarAccessory.m"; sourceTree = "<group>"; };
 		1E774F891128E78E00DC4EC7 /* PPTitlebarAccessoryPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTitlebarAccessoryPopUpButton.h; sourceTree = "<group>"; };
@@ -309,7 +273,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1E774DF11128950C00DC4EC7 /* MainWindow.xib */,
 			);
 			name = PlayerPiano;
 			sourceTree = "<group>";
@@ -366,12 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				C9ECB1F7119AA2340075E08B /* pianobar */,
-				1E21245511A86B4000C19E05 /* libezxml.a */,
-				1E21245711A86B4000C19E05 /* libwaitress.a */,
-				1E21245911A86B4000C19E05 /* libpiano.a */,
-				1E21245B11A86B4000C19E05 /* pianobar */,
 				C9371DCA11A37242001CF691 /* PianoBar.framework */,
-				1E21245D11A86B4000C19E05 /* libPianoBar.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,41 +386,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1E21245511A86B4000C19E05 /* libezxml.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libezxml.a;
-			remoteRef = 1E21245411A86B4000C19E05 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1E21245711A86B4000C19E05 /* libwaitress.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libwaitress.a;
-			remoteRef = 1E21245611A86B4000C19E05 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1E21245911A86B4000C19E05 /* libpiano.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libpiano.a;
-			remoteRef = 1E21245811A86B4000C19E05 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1E21245B11A86B4000C19E05 /* pianobar */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = pianobar;
-			remoteRef = 1E21245A11A86B4000C19E05 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1E21245D11A86B4000C19E05 /* libPianoBar.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libPianoBar.a;
-			remoteRef = 1E21245C11A86B4000C19E05 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		1E774D4D11288D0700DC4EC7 /* VillainousStyle.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -572,14 +495,6 @@
 				1E774CE0112883B700DC4EC7 /* English */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		1E774DF11128950C00DC4EC7 /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1E774DF21128950C00DC4EC7 /* English */,
-			);
-			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
