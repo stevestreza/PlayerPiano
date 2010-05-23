@@ -35,6 +35,8 @@
 		C93055A111A3C2990096D345 /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C930559B11A3C26E0096D345 /* Growl.framework */; };
 		C9371DDB11A37372001CF691 /* PianoBar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C9371DCA11A37242001CF691 /* PianoBar.framework */; };
 		C9371DE311A373D6001CF691 /* PianoBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9371DE211A373D6001CF691 /* PianoBar.framework */; };
+		C968D63E11A8BAA400813AC7 /* PPNewStationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C968D63D11A8BAA400813AC7 /* PPNewStationController.m */; };
+		C968D64011A8BAD100813AC7 /* NewStation.xib in Resources */ = {isa = PBXBuildFile; fileRef = C968D63F11A8BAD100813AC7 /* NewStation.xib */; };
 		C9B60EB211A7BC3E00A28F37 /* MBPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B60EB111A7BC3E00A28F37 /* MBPreferencesController.m */; };
 		C9B60EC011A7BD2600A28F37 /* PPAccountPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B60EBF11A7BD2600A28F37 /* PPAccountPreferencesViewController.m */; };
 		C9B60EE111A7BF0A00A28F37 /* AccountPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B60EE011A7BF0A00A28F37 /* AccountPreferences.xib */; };
@@ -154,6 +156,9 @@
 		C90D021B119B5C0400769A44 /* PPGrowingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPGrowingTextField.m; sourceTree = "<group>"; };
 		C930559B11A3C26E0096D345 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = contrib/Growl.framework; sourceTree = "<group>"; };
 		C9371DE211A373D6001CF691 /* PianoBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PianoBar.framework; path = contrib/pianobar/build/Release/PianoBar.framework; sourceTree = "<group>"; };
+		C968D63C11A8BAA400813AC7 /* PPNewStationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNewStationController.h; sourceTree = "<group>"; };
+		C968D63D11A8BAA400813AC7 /* PPNewStationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNewStationController.m; sourceTree = "<group>"; };
+		C968D63F11A8BAD100813AC7 /* NewStation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewStation.xib; sourceTree = "<group>"; };
 		C9B60EB011A7BC3E00A28F37 /* MBPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPreferencesController.h; sourceTree = "<group>"; };
 		C9B60EB111A7BC3E00A28F37 /* MBPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPreferencesController.m; sourceTree = "<group>"; };
 		C9B60EBE11A7BD2600A28F37 /* PPAccountPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAccountPreferencesViewController.h; sourceTree = "<group>"; };
@@ -199,6 +204,8 @@
 				C90D01F0119B551E00769A44 /* PPITunesButtonCell.m */,
 				C90D021A119B5C0400769A44 /* PPGrowingTextField.h */,
 				C90D021B119B5C0400769A44 /* PPGrowingTextField.m */,
+				C968D63C11A8BAA400813AC7 /* PPNewStationController.h */,
+				C968D63D11A8BAA400813AC7 /* PPNewStationController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -298,6 +305,7 @@
 				1E774CCC1128834E00DC4EC7 /* thumb-down.png */,
 				1E774CCD1128834E00DC4EC7 /* thumb-up.png */,
 				C9B60EE011A7BF0A00A28F37 /* AccountPreferences.xib */,
+				C968D63F11A8BAD100813AC7 /* NewStation.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -436,6 +444,7 @@
 				1E7D45DF1128FFB4001CA61F /* play.png in Resources */,
 				C9B60EE111A7BF0A00A28F37 /* AccountPreferences.xib in Resources */,
 				1E21248711A86CB400C19E05 /* Growl Registration Ticket.growlRegDict in Resources */,
+				C968D64011A8BAD100813AC7 /* NewStation.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +471,7 @@
 				C90D021C119B5C0400769A44 /* PPGrowingTextField.m in Sources */,
 				C9B60EB211A7BC3E00A28F37 /* MBPreferencesController.m in Sources */,
 				C9B60EC011A7BD2600A28F37 /* PPAccountPreferencesViewController.m in Sources */,
+				C968D63E11A8BAA400813AC7 /* PPNewStationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

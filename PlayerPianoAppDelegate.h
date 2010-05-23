@@ -47,4 +47,5 @@
 -(IBAction)handlePlaybackSegmentedControl:(id)sender;
 -(IBAction)quit:(id)sender;
 -(IBAction)showPreferences:(id)sender;
+-(IBAction)newStation:(id)sender;
 @end

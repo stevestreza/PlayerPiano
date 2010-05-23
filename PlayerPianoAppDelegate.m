@@ -19,6 +19,7 @@
 #import <Growl/Growl.h>
 #import "MBPreferencesController.h"
 #import "PPAccountPreferencesViewController.h"
+#import "PPNewStationController.h"
 
 @implementation PlayerPianoAppDelegate
 
@@ -197,6 +198,20 @@
 
 -(IBAction)showPreferences:(id)sender{
 	[[MBPreferencesController sharedController] showWindow:self];
+}
+
+-(IBAction)newStation:(id)sender{
+	static PPNewStationController *newStationController = nil;
+	if (!newStationController) {
+		newStationController = [[PPNewStationController alloc] initWithWindowNibName:@"NewStation"];
+		newStationController.pianobar = pianobar;
+	}
+	
+	[NSApp beginSheet:[newStationController window] modalForWindow:window modalDelegate:self didEndSelector:@selector(didEndNewStationSheet:returnCode:contextInfo:) contextInfo:nil];
+}
+
+-(void)didEndNewStationSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo{
+	[sheet orderOut:self];
 }
 
 @end

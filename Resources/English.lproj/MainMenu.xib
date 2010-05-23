@@ -12,9 +12,9 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="605"/>
-			<integer value="57"/>
+			<integer value="81"/>
 			<integer value="622"/>
+			<integer value="605"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -196,7 +196,7 @@
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="705341025">
 									<reference key="NSMenu" ref="720053764"/>
-									<string key="NSTitle">New</string>
+									<string key="NSTitle">New Station…</string>
 									<string key="NSKeyEquiv">n</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -2009,14 +2009,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">newDocument:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="705341025"/>
-					</object>
-					<int key="connectionID">373</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">openDocument:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="722745758"/>
@@ -2814,6 +2806,14 @@
 						<reference key="destination" ref="609285721"/>
 					</object>
 					<int key="connectionID">726</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">newStation:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="705341025"/>
+					</object>
+					<int key="connectionID">727</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4609,7 +4609,7 @@
 					<string>PPTitlebarAccessoryPopUpButton</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{20, 767}, {107, 54}}</string>
+					<string>{{24, 703}, {107, 54}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4644,7 +4644,7 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{452, 109}, {196, 203}}</string>
+					<string>{{366, 533}, {196, 203}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{145, 474}, {199, 203}}</string>
@@ -4672,7 +4672,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">726</int>
+			<int key="maxID">727</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4733,6 +4733,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>handlePlaybackSegmentedControl:</string>
 							<string>handleThumbSegmentedControl:</string>
+							<string>newStation:</string>
 							<string>openInStore:</string>
 							<string>playNextSong:</string>
 							<string>playPauseCurrentSong:</string>
@@ -4743,6 +4744,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>

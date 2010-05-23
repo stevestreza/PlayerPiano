@@ -64,7 +64,7 @@
  * @details     MBPreferencesController handles the creation and display of the preferences
  *              window as well as switching between different "modules" using the toolbar.
  */
-@interface MBPreferencesController : NSWindowController {
+@interface MBPreferencesController : NSWindowController<NSToolbarDelegate> {
 	NSArray *_modules;
 	id<MBPreferencesModule> _currentModule;
 }
