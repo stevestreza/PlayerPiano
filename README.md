@@ -31,6 +31,11 @@ You need to add your Pandora account information to the settings. To do this, yo
 
 Once you do this, restart PlayerPiano.
 
+Extending PlayerPiano
+=====================
+
+You can get the currently playing song by reading the tab-separated values file at ~/Library/Application Support/PlayerPiano/nowplaying.tsv, in the format of song-artist-album. You can also subscribe for a distributed notification which gets fired when the track changes, named "com.villainware.PlayerPiano.PPPianobarControllerDidBeginPlayingTrackNotification".
+
 License
 =======
 
