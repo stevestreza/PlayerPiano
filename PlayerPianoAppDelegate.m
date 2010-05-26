@@ -25,11 +25,29 @@
 
 @synthesize window;
 
+-(void) setupFileWriter{
+	NSString *path = [@"~/Library/Application Support/PlayerPiano/nowplaying.tsv" stringByExpandingTildeInPath];
+	
+	NSError *err = nil;
+	if(![[NSFileManager defaultManager] createDirectoryAtPath:[path stringByDeletingLastPathComponent]
+								  withIntermediateDirectories:YES
+												   attributes:nil
+														error:&err]){
+		NSLog(@"Can't create intermediate directory to %@",path);
+		return;
+	}
+	
+	tempFileWriter = [[PPTempFileWriter alloc] init];
+	tempFileWriter.path = path;
+}	
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [GrowlApplicationBridge setGrowlDelegate:self];
     
 	[PPStyleSheet class];
 	[PPTimeIntervalTransformer class];
+	
+	[self setupFileWriter];
 	
 	backgroundContainer.styleName = @"backgroundStyle";
 	[backgroundContainer setNeedsDisplay];
@@ -167,7 +185,7 @@
     NSLog(@"Logged in");
 }
 
--(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(PPTrack *)song;
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingTrack:(PPTrack *)song;
 {
     [GrowlApplicationBridge notifyWithTitle:[song title]
                                 description:[song artist]
@@ -179,7 +197,7 @@
     NSLog(@"Playing song: %@", song);
 }
 
--(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingChannel:(PPStation *)channel;
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingStation:(PPStation *)channel;
 {
     NSLog(@"Playing station: %@", channel);
 }
@@ -191,8 +209,9 @@
 
 -(IBAction)quit:(id)sender{
 	[pianobar stop];
-	[pianobar release];
+	[pianobar release], pianobar = nil;
 	
+	[self release];
 	[NSApp terminate:sender];
 }
 
@@ -212,6 +231,13 @@
 
 -(void)didEndNewStationSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo{
 	[sheet orderOut:self];
+}
+
+-(void)dealloc{
+	[tempFileWriter release], tempFileWriter = nil;
+	[pianobar release], pianobar = nil;
+	
+	[super dealloc];
 }
 
 @end

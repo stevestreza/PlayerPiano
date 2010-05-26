@@ -26,6 +26,7 @@
 		1EF23BCA11274AFA00D04DD7 /* PPFileHandleLineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23BC911274AFA00D04DD7 /* PPFileHandleLineBuffer.m */; };
 		1EF23C2E11275A5B00D04DD7 /* PPLineRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C2D11275A5B00D04DD7 /* PPLineRecognizer.m */; };
 		1EF23C3B11275C6100D04DD7 /* PPLineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF23C3A11275C6100D04DD7 /* PPLineParser.m */; };
+		1EFC549411ACAD5700690746 /* PPTempFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC549311ACAD5700690746 /* PPTempFileWriter.m */; };
 		256AC3DA0F4B6AC300CF3369 /* PlayerPianoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -177,6 +178,8 @@
 		1EF23C2D11275A5B00D04DD7 /* PPLineRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLineRecognizer.m; sourceTree = "<group>"; };
 		1EF23C3911275C6100D04DD7 /* PPLineParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLineParser.h; sourceTree = "<group>"; };
 		1EF23C3A11275C6100D04DD7 /* PPLineParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLineParser.m; sourceTree = "<group>"; };
+		1EFC549211ACAD5700690746 /* PPTempFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTempFileWriter.h; sourceTree = "<group>"; };
+		1EFC549311ACAD5700690746 /* PPTempFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTempFileWriter.m; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* PlayerPianoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPianoAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* PlayerPianoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerPianoAppDelegate.m; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* PlayerPiano_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPiano_Prefix.pch; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				C90D021B119B5C0400769A44 /* PPGrowingTextField.m */,
 				C968D63C11A8BAA400813AC7 /* PPNewStationController.h */,
 				C968D63D11A8BAA400813AC7 /* PPNewStationController.m */,
+				1EFC549211ACAD5700690746 /* PPTempFileWriter.h */,
+				1EFC549311ACAD5700690746 /* PPTempFileWriter.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				C9B60EB211A7BC3E00A28F37 /* MBPreferencesController.m in Sources */,
 				C9B60EC011A7BD2600A28F37 /* PPAccountPreferencesViewController.m in Sources */,
 				C968D63E11A8BAA400813AC7 /* PPNewStationController.m in Sources */,
+				1EFC549411ACAD5700690746 /* PPTempFileWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

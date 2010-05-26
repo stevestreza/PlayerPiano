@@ -13,6 +13,7 @@
 #import <PianoBar/PPPianobarController.h>
 #import <Growl/Growl.h>
 #import "PPStyleView.h"
+#import "PPTempFileWriter.h"
 
 @class PPGrowingTextField;
 
@@ -33,6 +34,9 @@
 	
 	IBOutlet NSTextField *elapsedField;
 	IBOutlet NSTextField *remainingField;
+	
+	// set up a file that other apps can read from
+	PPTempFileWriter *tempFileWriter;
 }
 
 @property (assign) IBOutlet NSWindow *window;
